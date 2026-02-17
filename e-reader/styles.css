@@ -762,20 +762,238 @@ body.night-mode {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .reader-container {
+        height: 600px;
+    }
+    
+    .reader-header {
+        padding: 6px 12px;
+        height: 44px;
+    }
+    
+    .icon-btn {
+        padding: 6px 8px;
+        font-size: 14px;
+        min-width: 28px;
+        height: 28px;
+    }
+    
     .book {
         max-width: 100%;
     }
     
     .page {
-        padding: 24px 16px;
+        padding: 20px 16px;
+    }
+    
+    .page-content {
+        font-size: 15px;
+    }
+    
+    .page-content h2 {
+        font-size: 24px;
+    }
+    
+    .page-content h3 {
+        font-size: 20px;
     }
     
     .book-title {
         max-width: 150px;
+        font-size: 12px;
     }
     
     .zoom-controls {
         bottom: 70px;
+        padding: 6px 10px;
+    }
+    
+    .zoom-btn {
+        padding: 5px 8px;
+        min-width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
+    
+    .zoom-level {
+        font-size: 11px;
+        min-width: 45px;
+    }
+    
+    .navigation {
+        padding: 6px 10px;
+    }
+    
+    .nav-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    .page-indicator {
+        font-size: 11px;
+        padding: 0 6px;
+    }
+    
+    .library-sidebar {
+        width: 240px;
+        left: -240px;
+    }
+    
+    .settings-panel {
+        width: 280px;
+        right: -280px;
+    }
+    
+    .book-container {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reader-container {
+        height: 600px;
+    }
+    
+    .reader-header {
+        padding: 4px 8px;
+        height: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .header-left,
+    .header-right {
+        gap: 2px;
+    }
+    
+    .icon-btn {
+        padding: 5px 6px;
+        font-size: 13px;
+        min-width: 26px;
+        height: 26px;
+    }
+    
+    .book-title {
+        display: none;
+    }
+    
+    .app-branding {
+        display: none;
+    }
+    
+    .page {
+        padding: 16px 12px;
+    }
+    
+    .page-content {
+        font-size: 14px;
+    }
+    
+    .page-content h2 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+    
+    .page-content h3 {
+        font-size: 18px;
+        margin: 20px 0 12px;
+    }
+    
+    .page-content p {
+        margin-bottom: 14px;
+    }
+    
+    .zoom-controls {
+        bottom: 65px;
+        padding: 5px 8px;
+        gap: 6px;
+    }
+    
+    .zoom-btn {
+        padding: 4px 6px;
+        min-width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+    
+    .zoom-level {
+        font-size: 10px;
+        min-width: 40px;
+    }
+    
+    .navigation {
+        padding: 5px 8px;
+        bottom: 12px;
+        right: 12px;
+    }
+    
+    .nav-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    .page-indicator {
+        font-size: 10px;
+        padding: 0 4px;
+    }
+    
+    .library-sidebar {
+        width: 200px;
+        left: -200px;
+    }
+    
+    .settings-panel {
+        width: 240px;
+        right: -240px;
+    }
+    
+    .book-container {
+        padding: 12px 8px;
+    }
+    
+    .library-header,
+    .settings-header {
+        padding: 10px 12px;
+    }
+    
+    .library-header h3,
+    .settings-header h3 {
+        font-size: 13px;
+    }
+    
+    .book-item {
+        padding: 6px;
+    }
+    
+    .book-cover {
+        width: 40px;
+        height: 56px;
+        font-size: 18px;
+    }
+    
+    .book-item-title {
+        font-size: 12px;
+    }
+    
+    .book-author {
+        font-size: 10px;
+    }
+    
+    .setting-item label {
+        font-size: 11px;
+    }
+    
+    .setting-btn {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .setting-control span {
+        font-size: 11px;
+    }
+    
+    .setting-select {
+        font-size: 11px;
+        padding: 6px 10px;
     }
 }
 

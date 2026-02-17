@@ -615,12 +615,68 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .vscode-container {
+        height: 600px;
+    }
+    
     .sidebar {
-        width: 180px;
+        width: 200px;
     }
     
     .minimap {
         display: none;
+    }
+    
+    .activity-bar {
+        width: 44px;
+    }
+    
+    .activity-icon {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .activity-icon i {
+        font-size: 20px;
+    }
+    
+    .file-item,
+    .folder-item {
+        font-size: 12px;
+    }
+    
+    .tab {
+        min-width: 100px;
+        font-size: 12px;
+    }
+    
+    .code-editor {
+        font-size: 13px;
+    }
+    
+    .breadcrumb {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    
+    .status-bar {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+    
+    .status-left,
+    .status-right {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vscode-container {
+        height: 600px;
+    }
+    
+    .sidebar {
+        width: 160px;
     }
     
     .activity-bar {
@@ -633,41 +689,49 @@ body {
     }
     
     .activity-icon i {
-        font-size: 20px;
-    }
-    
-    .file-item,
-    .folder-item {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .sidebar {
-        width: 150px;
-    }
-    
-    .activity-bar {
-        width: 36px;
-    }
-    
-    .activity-icon {
-        width: 36px;
-        height: 36px;
-    }
-    
-    .activity-icon i {
         font-size: 18px;
     }
     
     .tab {
-        min-width: 100px;
+        min-width: 90px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+    
+    .code-editor {
         font-size: 12px;
-        padding: 6px 10px;
+        padding: 12px;
+    }
+    
+    .line-numbers {
+        font-size: 11px;
+        padding: 12px 6px;
+        min-width: 40px;
     }
     
     .status-bar {
         font-size: 10px;
+        padding: 2px 6px;
+    }
+    
+    .status-left,
+    .status-right {
+        gap: 6px;
+    }
+    
+    .breadcrumb {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+    
+    .sidebar-title {
+        font-size: 10px;
+    }
+    
+    .file-item,
+    .folder-item {
+        font-size: 11px;
+        padding: 3px 6px;
     }
 }
 
