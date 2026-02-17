@@ -378,6 +378,10 @@
                     const typingId = showTypingIndicator();
                     
                     try {
+                        console.log('🔄 Sending request to OpenRouter API...');
+                        console.log('Model:', MODEL);
+                        console.log('Message:', message);
+                        
                         const response = await fetch(OPENROUTER_API_URL, {
                             method: 'POST',
                             headers: {
@@ -402,7 +406,8 @@
                         const data = await response.json();
                         removeTypingIndicator(typingId);
                         
-                        console.log('API Response:', response.status, data);
+                        console.log('📥 API Response Status:', response.status);
+                        console.log('📥 API Response Data:', data);
                         
                         if (response.ok && data.choices && data.choices[0]) {
                             addMessage(data.choices[0].message.content, 'assistant');
@@ -411,16 +416,27 @@
                             let errorMsg = 'Sorry, I encountered an error. ';
                             if (data.error) {
                                 errorMsg += data.error.message || 'Please try again.';
-                                console.error('API Error:', data.error);
+                                console.error('❌ API Error:', data.error);
+                                console.error('❌ Full error details:', JSON.stringify(data.error, null, 2));
+                                
+                                // Check for specific error types
+                                if (data.error.code === 'invalid_api_key' || data.error.message?.includes('API key')) {
+                                    errorMsg = '🔑 API Key Error: The OpenRouter API key is invalid or expired. Please check your API key at https://openrouter.ai/keys';
+                                } else if (data.error.message?.includes('User not found')) {
+                                    errorMsg = '👤 Account Error: OpenRouter account not found. Please verify your account at https://openrouter.ai/';
+                                } else if (data.error.message?.includes('insufficient')) {
+                                    errorMsg = '💳 Credit Error: Insufficient credits. Please add credits at https://openrouter.ai/credits';
+                                }
                             } else {
                                 errorMsg += 'Please try again.';
+                                console.error('❌ Unknown error - Response:', response.status, data);
                             }
                             addMessage(errorMsg, 'assistant');
                         }
                     } catch (error) {
                         removeTypingIndicator(typingId);
-                        addMessage('Sorry, could not connect. Check your internet.', 'assistant');
-                        console.error(error);
+                        console.error('❌ Network Error:', error);
+                        addMessage('Sorry, could not connect to the AI service. Check your internet connection.', 'assistant');
                     }
                     
                     textarea.disabled = false;
