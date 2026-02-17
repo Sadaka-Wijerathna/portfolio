@@ -613,20 +613,307 @@ body {
     border-color: #007acc;
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background: #007acc;
+    color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.mobile-sidebar-toggle:hover {
+    background: #1177bb;
+    transform: scale(1.05);
+}
+
+.mobile-sidebar-toggle i {
+    font-size: 18px;
+}
+
+/* Sidebar Overlay for Mobile */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+}
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .vscode-container {
         height: 600px;
     }
     
     .sidebar {
-        width: 200px;
+        width: 220px;
     }
     
+    .minimap {
+        width: 80px;
+    }
+    
+    .minimap-content {
+        font-size: 1.5px;
+        line-height: 2.5px;
+    }
+    
+    .code-editor {
+        font-size: 13px;
+    }
+    
+    .tab {
+        min-width: 110px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .vscode-container {
+        height: 100vh;
+        position: relative;
+    }
+    
+    /* Hide minimap on tablets */
     .minimap {
         display: none;
     }
     
+    /* Show mobile toggle button */
+    .mobile-sidebar-toggle {
+        display: flex;
+    }
+    
+    /* Sidebar becomes overlay on mobile */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100vh;
+        width: 250px;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sidebar.mobile-open {
+        left: 48px;
+    }
+    
+    .sidebar-overlay {
+        display: block;
+    }
+    
+    /* Activity bar adjustments */
+    .activity-bar {
+        width: 48px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 1000;
+    }
+    
+    .activity-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .activity-icon i {
+        font-size: 20px;
+    }
+    
+    /* Adjust activity icon tooltip for mobile */
+    .activity-icon::after {
+        display: none;
+    }
+    
+    /* Editor container adjustments */
+    .editor-container {
+        margin-left: 48px;
+        width: calc(100% - 48px);
+    }
+    
+    /* Tab bar improvements */
+    .tab-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    
+    .tab-bar::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .tab-bar::-webkit-scrollbar-thumb {
+        background: #424242;
+        border-radius: 2px;
+    }
+    
+    .tab {
+        min-width: 100px;
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+    
+    .tab-close {
+        opacity: 1;
+    }
+    
+    /* Code editor improvements */
+    .code-editor {
+        font-size: 13px;
+        padding: 12px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .line-numbers {
+        font-size: 12px;
+        padding: 12px 6px;
+        min-width: 45px;
+    }
+    
+    /* Breadcrumb adjustments */
+    .breadcrumb {
+        font-size: 11px;
+        padding: 8px 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .breadcrumb::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    /* Status bar improvements */
+    .status-bar {
+        font-size: 11px;
+        padding: 4px 8px;
+        height: auto;
+        min-height: 22px;
+    }
+    
+    .status-left,
+    .status-right {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .status-item {
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+    
+    /* Hide some status items on mobile */
+    .status-right .status-item:nth-child(n+3) {
+        display: none;
+    }
+    
+    /* Sidebar content adjustments */
+    .file-item,
+    .folder-item {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    .file-item i,
+    .folder-item i {
+        font-size: 14px;
+    }
+    
+    /* Search and other views */
+    .search-input,
+    .settings-input,
+    .settings-select {
+        font-size: 14px;
+        padding: 8px 10px;
+        -webkit-appearance: none;
+    }
+    
+    /* Extension items */
+    .extension-item {
+        padding: 12px 8px;
+    }
+    
+    .extension-icon {
+        font-size: 20px;
+        width: 28px;
+    }
+    
+    .extension-name {
+        font-size: 12px;
+    }
+    
+    .extension-desc {
+        font-size: 10px;
+    }
+    
+    /* Git items */
+    .git-item {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .vscode-container {
+        height: 100vh;
+    }
+    
+    /* Mobile toggle button */
+    .mobile-sidebar-toggle {
+        width: 36px;
+        height: 36px;
+        top: 8px;
+        left: 8px;
+    }
+    
+    .mobile-sidebar-toggle i {
+        font-size: 16px;
+    }
+    
+    /* Sidebar adjustments */
+    .sidebar {
+        width: 220px;
+        left: -220px;
+    }
+    
+    .sidebar.mobile-open {
+        left: 44px;
+    }
+    
+    /* Activity bar */
     .activity-bar {
         width: 44px;
     }
@@ -637,76 +924,186 @@ body {
     }
     
     .activity-icon i {
-        font-size: 20px;
-    }
-    
-    .file-item,
-    .folder-item {
-        font-size: 12px;
-    }
-    
-    .tab {
-        min-width: 100px;
-        font-size: 12px;
-    }
-    
-    .code-editor {
-        font-size: 13px;
-    }
-    
-    .breadcrumb {
-        font-size: 11px;
-        padding: 6px 12px;
-    }
-    
-    .status-bar {
-        font-size: 11px;
-        padding: 3px 8px;
-    }
-    
-    .status-left,
-    .status-right {
-        gap: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .vscode-container {
-        height: 600px;
-    }
-    
-    .sidebar {
-        width: 160px;
-    }
-    
-    .activity-bar {
-        width: 40px;
-    }
-    
-    .activity-icon {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .activity-icon i {
         font-size: 18px;
     }
     
-    .tab {
-        min-width: 90px;
-        font-size: 11px;
-        padding: 6px 8px;
+    /* Editor container */
+    .editor-container {
+        margin-left: 44px;
+        width: calc(100% - 44px);
     }
     
+    /* Tab bar */
+    .tab {
+        min-width: 85px;
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+    
+    .tab i:first-child {
+        font-size: 14px;
+    }
+    
+    .tab-name {
+        max-width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    /* Code editor */
     .code-editor {
         font-size: 12px;
-        padding: 12px;
+        padding: 10px;
+        line-height: 1.5;
     }
     
     .line-numbers {
         font-size: 11px;
-        padding: 12px 6px;
-        min-width: 40px;
+        padding: 10px 4px;
+        min-width: 38px;
+    }
+    
+    /* Breadcrumb */
+    .breadcrumb {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+    
+    .breadcrumb i {
+        font-size: 9px;
+    }
+    
+    /* Status bar */
+    .status-bar {
+        font-size: 10px;
+        padding: 3px 6px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    
+    .status-left,
+    .status-right {
+        gap: 6px;
+        flex-wrap: nowrap;
+    }
+    
+    .status-item {
+        font-size: 9px;
+        padding: 2px 3px;
+        white-space: nowrap;
+    }
+    
+    /* Hide more status items on small mobile */
+    .status-right .status-item:nth-child(n+2) {
+        display: none;
+    }
+    
+    .status-left .status-item:nth-child(n+2) {
+        display: none;
+    }
+    
+    /* Sidebar header */
+    .sidebar-header {
+        padding: 6px 12px;
+    }
+    
+    .sidebar-title {
+        font-size: 10px;
+    }
+    
+    .sidebar-actions i {
+        font-size: 12px;
+    }
+    
+    /* File and folder items */
+    .file-item,
+    .folder-item {
+        font-size: 11px;
+        padding: 5px 6px;
+    }
+    
+    .file-item i,
+    .folder-item i {
+        font-size: 13px;
+    }
+    
+    .file-list {
+        padding-left: 16px;
+    }
+    
+    /* Search input */
+    .search-input {
+        font-size: 13px;
+        padding: 8px;
+    }
+    
+    /* Settings */
+    .settings-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .settings-input,
+    .settings-select {
+        width: 100%;
+        font-size: 13px;
+    }
+    
+    /* Extension items */
+    .extension-item {
+        padding: 10px 6px;
+        gap: 8px;
+    }
+    
+    .extension-icon {
+        font-size: 18px;
+        width: 24px;
+    }
+    
+    .extension-name {
+        font-size: 11px;
+    }
+    
+    .extension-desc {
+        font-size: 9px;
+    }
+    
+    .extension-btn {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+    
+    /* Git section */
+    .git-header {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+    
+    .git-item {
+        padding: 5px 6px;
+        font-size: 11px;
+    }
+    
+    .git-status {
+        font-size: 10px;
+    }
+}
+
+/* Landscape mode for mobile devices */
+@media (max-width: 768px) and (orientation: landscape) {
+    .vscode-container {
+        height: 100vh;
+    }
+    
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+    
+    .sidebar.mobile-open {
+        left: 44px;
     }
     
     .status-bar {
@@ -714,24 +1111,51 @@ body {
         padding: 2px 6px;
     }
     
-    .status-left,
-    .status-right {
-        gap: 6px;
+    .breadcrumb {
+        padding: 4px 10px;
     }
     
-    .breadcrumb {
-        font-size: 10px;
+    .tab {
         padding: 6px 10px;
     }
-    
-    .sidebar-title {
-        font-size: 10px;
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .activity-icon,
+    .file-item,
+    .folder-item,
+    .tab,
+    .status-item {
+        min-height: 44px;
     }
     
-    .file-item,
-    .folder-item {
-        font-size: 11px;
-        padding: 3px 6px;
+    /* Remove hover effects on touch devices */
+    .activity-icon:hover,
+    .file-item:hover,
+    .folder-item:hover,
+    .tab:hover,
+    .status-item:hover {
+        background: inherit;
+    }
+    
+    /* Active states for touch */
+    .activity-icon:active,
+    .file-item:active,
+    .folder-item:active,
+    .tab:active {
+        background: #2a2d2e;
+        transform: scale(0.98);
+    }
+    
+    /* Better scrolling on touch devices */
+    .sidebar-content,
+    .code-editor,
+    .tab-bar,
+    .breadcrumb {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
     }
 }
 

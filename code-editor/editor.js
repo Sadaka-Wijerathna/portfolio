@@ -817,10 +817,14 @@ const lineColSpan = document.getElementById('lineCol');
 const languageModeSpan = document.getElementById('languageMode');
 const minimapContent = document.getElementById('minimapContent');
 const tabBar = document.querySelector('.tab-bar');
+const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const sidebar = document.querySelector('.sidebar');
 
 // State
 let currentFile = 'javascript';
 let openTabs = ['javascript'];
+let isMobileSidebarOpen = false;
 
 // Initialize
 function init() {
@@ -971,6 +975,10 @@ function setupEventListeners() {
         item.addEventListener('click', () => {
             const fileType = item.dataset.file;
             addTab(fileType);
+            // Close sidebar on mobile after selecting a file
+            if (window.innerWidth <= 768) {
+                closeMobileSidebar();
+            }
         });
     });
     
@@ -998,6 +1006,52 @@ function setupEventListeners() {
             icon.classList.add('active');
         });
     });
+    
+    // Mobile sidebar toggle
+    if (mobileSidebarToggle) {
+        mobileSidebarToggle.addEventListener('click', toggleMobileSidebar);
+    }
+    
+    // Sidebar overlay click
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeMobileSidebar);
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', handleResize);
+}
+
+// Toggle mobile sidebar
+function toggleMobileSidebar() {
+    isMobileSidebarOpen = !isMobileSidebarOpen;
+    
+    if (isMobileSidebarOpen) {
+        sidebar.classList.add('mobile-open');
+        sidebarOverlay.classList.add('active');
+        mobileSidebarToggle.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+        sidebar.classList.remove('mobile-open');
+        sidebarOverlay.classList.remove('active');
+        mobileSidebarToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+}
+
+// Close mobile sidebar
+function closeMobileSidebar() {
+    if (isMobileSidebarOpen) {
+        isMobileSidebarOpen = false;
+        sidebar.classList.remove('mobile-open');
+        sidebarOverlay.classList.remove('active');
+        mobileSidebarToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+}
+
+// Handle window resize
+function handleResize() {
+    // Close mobile sidebar when resizing to desktop
+    if (window.innerWidth > 768 && isMobileSidebarOpen) {
+        closeMobileSidebar();
+    }
 }
 
 // Switch sidebar view
