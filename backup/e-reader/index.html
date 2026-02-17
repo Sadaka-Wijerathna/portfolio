@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studying & Learning - E-Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="reader-container">
+        <!-- Toolbar -->
+        <div class="reader-header">
+            <div class="header-left">
+                <button class="icon-btn" id="libraryBtn" title="Pages">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button class="icon-btn" id="searchBtn" title="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-container" id="searchContainer">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search in document...">
+                    <button class="icon-btn" id="closeSearchBtn" title="Close search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="app-branding">
+                    <div class="lottie-icon" id="studyIcon"></div>
+                    <span class="app-title">Studying & Learning</span>
+                </div>
+                <span class="book-title" id="bookTitle">Clean Code</span>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn" id="rotateBtn" title="Rotate">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button class="icon-btn" id="bookmarkBtn" title="Add bookmark">
+                    <i class="far fa-bookmark"></i>
+                </button>
+                <button class="icon-btn" id="highlightBtn" title="Highlight">
+                    <i class="fas fa-highlighter"></i>
+                </button>
+
+                <button class="icon-btn" id="printBtn" title="Print">
+                    <i class="fas fa-print"></i>
+                </button>
+                <button class="icon-btn" id="settingsBtn" title="More options">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Library Sidebar -->
+        <div class="library-sidebar" id="librarySidebar">
+            <div class="library-header">
+                <h3>Pages</h3>
+                <button class="close-btn" id="closeLibrary">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="library-content" id="pagesContainer">
+                <!-- Pages will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Studying & Learning Area -->
+        <div class="studying-area">
+            <div class="book-container" id="bookContainer">
+                <div class="book" id="book">
+                    <!-- Single Page View -->
+                    <div class="page left-page" id="leftPage">
+                        <div class="page-content" id="leftContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="navigation">
+                <div class="page-indicator">
+                    <span id="currentPage">1</span> / <span id="totalPages">10</span>
+                </div>
+            </div>
+
+            <!-- Zoom Controls -->
+            <div class="zoom-controls">
+                <button type="button" class="zoom-btn" id="zoomOutBtn" title="Zoom out">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <span class="zoom-level" id="zoomLevel">100%</span>
+                <button type="button" class="zoom-btn" id="zoomInBtn" title="Zoom in">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button type="button" class="zoom-btn" id="fitWidthBtn" title="Fit to width">
+                    <i class="fas fa-arrows-alt-h"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-header">
+                <h3>Settings</h3>
+                <button class="close-btn" id="closeSettings">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label>Font Size</label>
+                    <div class="setting-control">
+                        <button class="setting-btn" id="decreaseFont">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span id="fontSizeValue">16px</span>
+                        <button class="setting-btn" id="increaseFont">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label>Line Height</label>
+                    <div class="setting-control">
+                        <button class="setting-btn" id="decreaseLineHeight">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span id="lineHeightValue">1.6</span>
+                        <button class="setting-btn" id="increaseLineHeight">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label>Font Family</label>
+                    <select id="fontFamily" class="setting-select">
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="'Times New Roman', serif">Times New Roman</option>
+                        <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="'Courier New', monospace">Courier New</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Page Width</label>
+                    <select id="pageWidth" class="setting-select">
+                        <option value="816">Standard (816px)</option>
+                        <option value="1000">Wide (1000px)</option>
+                        <option value="100%">Full Width</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlight Tooltip -->
+        <div class="highlight-tooltip" id="highlightTooltip">
+            <button class="highlight-btn yellow" data-color="yellow" title="Yellow">
+                <i class="fas fa-highlighter"></i>
+            </button>
+            <button class="highlight-btn green" data-color="green" title="Green">
+                <i class="fas fa-highlighter"></i>
+            </button>
+            <button class="highlight-btn blue" data-color="blue" title="Blue">
+                <i class="fas fa-highlighter"></i>
+            </button>
+            <button class="highlight-btn remove" data-color="remove" title="Remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="reader.js"></script>
+</body>
+</html>

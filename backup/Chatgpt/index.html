@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>AI Chat - Powered by OpenRouter</title>
+    
+    <!-- Meta Tags -->
+    <meta property="og:title" content="ChatGPT">
+    <meta property="og:image" content="images/share-og.png">
+    <meta property="og:description" content="ChatGPT helps you get answers, find inspiration, and be more productive.">
+    <meta property="og:url" content="https://chatgpt.com/">
+    <meta property="og:site_name" content="ChatGPT">
+    <meta name="description" content="ChatGPT is your AI chatbot for everyday use. Chat with the most advanced AI to explore ideas, solve problems, and learn faster.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon-eex17e9e.ico" sizes="48x48">
+    <link rel="icon" href="images/favicon-l4nq08hd.svg" type="image/svg+xml">
+    <link rel="icon" href="images/favicon-48x48-0tm76ul0.webp" type="image/png" sizes="48x48">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180x180-kqq5ndm1.webp">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/root-flze47vn.css">
+    <link rel="stylesheet" href="css/conversation-small-fav1q0dv.css">
+    <link rel="stylesheet" href="css/spotify-scrollbar.css">
+</head>
+
+<body class="dark">
+    <!-- Skip to content link -->
+    <div class="fixed inset-x-0 top-0 z-50 mt-4 flex justify-center select-none not-focus-within:sr-only">
+        <a data-skip-to-content="" class="interactive-bg-secondary behavior-btn interactive-label-secondary rounded-2xl px-4 py-2 text-base print:hidden" href="#main">
+            Skip to content
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="flex h-svh w-screen flex-col">
+        <div class="relative z-0 flex min-h-0 w-full flex-1">
+            <div class="relative flex min-h-0 w-full flex-1">
+                
+                <!-- Sidebar -->
+                <div class="border-token-border-light relative z-21 h-full shrink-0 overflow-hidden border-e max-md:hidden print:hidden" 
+                     id="stage-slideover-sidebar" 
+                     style="width:var(--sidebar-width);background-color:var(--sidebar-bg, var(--bg-elevated-secondary))">
+                    <div class="relative flex h-full flex-col">
+                        
+                        <!-- Sidebar Content -->
+                        <div class="opacity-100 motion-safe:transition-opacity motion-safe:duration-150 motion-safe:ease-linear h-full w-(--sidebar-width) overflow-x-clip overflow-y-auto text-clip whitespace-nowrap bg-(--sidebar-bg,var(--bg-elevated-secondary))">
+                            <h2 class="select-none" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal">
+                                Chat history
+                            </h2>
+                            
+                            <nav class="group/scrollport relative flex h-full w-full flex-1 flex-col overflow-y-auto transition-opacity motion-safe:duration-500" aria-label="Chat history">
+                                
+                                <!-- Sidebar Header -->
+                                <div class="short:group-data-scrolled-from-top/scrollport:shadow-sharp-edge-top sticky top-0 z-30 bg-(--sidebar-mask-bg,var(--bg-elevated-secondary))">
+                                    <div class="touch:px-1.5 px-2">
+                                        <div id="sidebar-header" class="h-header-height flex items-center justify-between">
+                                            <div data-sidebar-item="true" aria-label="Home" class="text-token-text-primary no-draggable touch:h-10 touch:w-10 flex h-9 w-9 items-center justify-center rounded-lg" style="cursor: default; pointer-events: none;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-lg">
+                                                    <use href="images/sprites-core-gvfid0kn.svg#55180d" fill="currentColor"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="flex">
+                                                <button class="text-token-text-tertiary no-draggable hover:bg-token-surface-hover keyboard-focused:bg-token-surface-hover touch:h-10 touch:w-10 flex h-9 w-9 items-center justify-center rounded-lg focus:outline-none disabled:opacity-50 no-draggable cursor-w-resize rtl:cursor-e-resize" aria-expanded="true" aria-controls="stage-slideover-sidebar" aria-label="Close sidebar" data-testid="close-sidebar-button" data-state="closed">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" data-rtl-flip="" class="icon max-md:hidden">
+                                                        <use href="images/sprites-core-gvfid0kn.svg#836f7a" fill="currentColor"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- New Chat Button -->
+                                <aside class="pt-(--sidebar-section-first-margin-top) last:mb-5 tall:sticky tall:top-header-height tall:z-20 not-tall:relative bg-(--sidebar-mask-bg,var(--bg-elevated-secondary)) [--sticky-spacer:6px]">
+                                    <button tabindex="0" data-fill="" class="group __menu-item hoverable" data-sidebar-item="true" data-testid="create-new-chat-button" id="new-chat-button">
+                                        <div class="flex min-w-0 items-center gap-1.5">
+                                            <div class="flex items-center justify-center group-disabled:opacity-50 group-data-disabled:opacity-50 icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon">
+                                                    <use href="images/sprites-core-gvfid0kn.svg#3a5c87" fill="currentColor"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="flex min-w-0 grow items-center gap-2.5">
+                                                <div class="truncate">New chat</div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </aside>
+
+                                <div class="grow"></div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="@container/main relative flex min-w-0 flex-1 flex-col -translate-y-[calc(env(safe-area-inset-bottom,0px)/2)] pt-[calc(env(safe-area-inset-bottom,0px)/2)]">
+                    <div data-scroll-root="" class="@w-sm/main:[scrollbar-gutter:stable_both-edges] touch:[scrollbar-width:none] relative flex min-h-0 min-w-0 flex-1 flex-col [scrollbar-gutter:stable] not-print:overflow-x-clip not-print:overflow-y-auto scroll-pt-(--header-height) [--sticky-padding-top:var(--header-height)]">
+                        
+                        <!-- Header -->
+                        <header id="page-header" data-fixed-header="less-than-xl" class="draggable no-draggable-children sticky top-0 p-2 touch:p-2.5 flex items-center justify-between z-20 h-header-height bg-token-main-surface-primary pointer-events-none select-none">
+                            <div class="pointer-events-none! flex flex-1 items-center *:pointer-events-auto">
+                                <div class="relative">
+                                    <button id="model-selector-button" aria-label="Model selector" type="button" data-testid="model-switcher-dropdown-button" class="group flex cursor-pointer justify-center items-center gap-1 rounded-lg min-h-9 touch:min-h-10 px-2.5 text-lg hover:bg-token-surface-hover focus-visible:bg-token-surface-hover font-normal whitespace-nowrap focus-visible:outline-none">
+                                        <div id="current-model-name">GPT-4o</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true" class="icon-sm text-token-text-tertiary">
+                                            <path d="M5 8l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                    
+                                    <!-- Dropdown Menu -->
+                                    <div id="model-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden z-50 max-h-96 overflow-y-auto">
+                                        <div class="py-2">
+                                            <div class="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Available Models</div>
+                                            
+                                            <button class="model-option w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-model="openai/gpt-4o" data-name="GPT-4o">
+                                                <div class="font-medium text-gray-900 dark:text-white">GPT-4o</div>
+                                                <div class="text-xs text-gray-500 dark:text-gray-400">OpenAI's latest</div>
+                                            </button>
+                                            <button class="model-option w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-model="openai/gpt-3.5-turbo" data-name="GPT-3.5 Turbo">
+                                                <div class="font-medium text-gray-900 dark:text-white">GPT-3.5 Turbo</div>
+                                                <div class="text-xs text-gray-500 dark:text-gray-400">Fast & affordable</div>
+                                            </button>
+                                            <button class="model-option w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-model="mistralai/mistral-large" data-name="Mistral Large">
+                                                <div class="font-medium text-gray-900 dark:text-white">Mistral Large</div>
+                                                <div class="text-xs text-gray-500 dark:text-gray-400">Mistral's flagship</div>
+                                            </button>
+                                            <button class="model-option w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-model="anthropic/claude-3.5-sonnet:beta" data-name="Claude 3.5 Sonnet">
+                                                <div class="font-medium text-gray-900 dark:text-white">Claude 3.5 Sonnet</div>
+                                                <div class="text-xs text-gray-500 dark:text-gray-400">Anthropic (lower tokens)</div>
+                                            </button>
+                                            <button class="model-option w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-model="meta-llama/llama-3.1-70b-instruct" data-name="Llama 3.1 70B">
+                                                <div class="font-medium text-gray-900 dark:text-white">Llama 3.1 70B</div>
+                                                <div class="text-xs text-gray-500 dark:text-gray-400">Open source</div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-center gap-3 overflow-x-hidden">
+                                <div class="flex items-center justify-end gap-2 overflow-x-hidden">
+                                    <div class="flex items-center" id="conversation-header-actions">
+                                        <div class="flex items-center">
+                                            <div class="flex items-center justify-center gap-2">
+                                                <!-- Logged in as Sadaka -->
+                                                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-token-surface-secondary">
+                                                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white font-semibold text-sm">
+                                                        S
+                                                    </div>
+                                                    <span class="text-token-text-primary font-medium">Sadaka</span>
+                                                </div>
+                                            </div>
+                                            <button aria-label="Open profile menu" data-testid="profile-button" class="group user-select-none ps-2 focus:outline-0" type="button">
+                                                <div class="group-hover:bg-token-interactive-bg-secondary-selected touch:h-10 touch:w-10 group-keyboard-focused:focus-ring flex h-9 w-9 items-center justify-center rounded-full">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-lg">
+                                                        <use href="images/sprites-core-gvfid0kn.svg#975ff3" fill="currentColor"></use>
+                                                    </svg>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+
+                        <!-- Main Content -->
+                        <main class="min-h-0 flex-1" id="main">
+                            <div id="thread" class="group/thread flex flex-col min-h-full">
+                                <div role="presentation" class="composer-parent flex flex-1 flex-col focus-visible:outline-0">
+                                    
+                                    <!-- Welcome Message -->
+                                    <div class="relative basis-auto flex-col shrink flex flex-col justify-end max-sm:grow max-sm:justify-center sm:min-h-[calc(42svh-var(--header-height))]">
+                                        <div class="flex justify-center">
+                                            <div class="mb-[40px] hidden text-center sm:block">
+                                                <div class="relative inline-flex justify-center text-center text-2xl leading-9 font-semibold">
+                                                    <h1 class="text-page-header inline-flex min-h-10.5 items-baseline whitespace-pre-wrap">
+                                                        <div class="px-1 text-pretty whitespace-pre-wrap">What can I help with?</div>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Input Area -->
+                                    <div id="thread-bottom-container" class="sticky bottom-0 group/thread-bottom-container relative isolate w-full basis-auto md:border-transparent md:pt-0 dark:border-white/20 md:dark:border-transparent print:hidden min-h-0 sm:grow flex flex-col" style="z-index: 20; background: var(--main-surface-primary); padding-top: 30px; margin-top: -10px;">
+                                        <div id="thread-bottom">
+                                            <div class="text-base mx-auto [--thread-content-margin:--spacing(4)] @w-sm/main:[--thread-content-margin:--spacing(6)] @w-lg/main:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+                                                <div class="[--thread-content-max-width:40rem] @w-lg/main:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 mb-4">
+                                                    
+                                                    <!-- Composer Form -->
+                                                    <div class="pointer-events-auto relative z-1 flex h-(--composer-container-height,100%) max-w-full flex-(--composer-container-flex,1) flex-col">
+                                                        <form class="group/composer w-full" data-expanded="" data-type="unified-composer">
+                                                            <div class="bg-token-bg-primary corner-superellipse/1.1 cursor-text bg-clip-padding p-2.5 contain-inline-size motion-safe:transition-colors motion-safe:duration-200 motion-safe:ease-in-out dark:bg-[#303030] shadow-short" data-composer-surface="true" style="border-radius:28px">
+                                                                
+                                                                <!-- Text Input and Send Button -->
+                                                                <div class="flex min-h-14 items-center gap-2" style="padding-left:0.5rem; padding-right:0.5rem;">
+                                                                    <div class="wcDTda_prosemirror-parent text-token-text-primary max-h-[max(30svh,5rem)] max-h-52 min-h-[var(--deep-research-composer-extra-height,unset)] flex-1 overflow-auto [scrollbar-width:thin] default-browser vertical-scroll-fade-mask" style="padding-left:0;">
+                                                                        <textarea class="wcDTda_fallbackTextarea" name="prompt-textarea" placeholder="Ask anything" data-virtualkeyboard="true" style="padding-left:0;text-align:left;height:24px;"></textarea>
+                                                                    </div>
+                                                                    
+                                                                    <!-- Send Button -->
+                                                                    <button data-testid="send-button" aria-label="Send message" class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-black text-white hover:opacity-80 disabled:opacity-30 disabled:cursor-not-allowed dark:bg-white dark:text-black transition-opacity cursor-pointer" type="submit" style="z-index: 10; pointer-events: auto;">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+
+                                                                <!-- Footer Actions -->
+                                                                <div data-testid="composer-footer-actions" class="-m-1 max-w-full overflow-x-auto p-1 [scrollbar-width:none]" style="transform:none">
+                                                                    <div class="flex min-w-fit items-center gap-1.5 ps-0 pe-1.5 max-sm:[&_[data-composer-footer-label]]:sr-only">
+                                                                        <div class="flex items-center gap-2"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Disclaimer -->
+                                            <div class="mt-auto text-token-text-secondary relative w-full overflow-hidden text-center text-xs md:px-[60px]" style="height:auto;opacity:0;transform:none">
+                                                <div class="select-none active:select-auto data-has-range-start:select-auto flex min-h-8 w-full items-center justify-center p-2">
+                                                    <span class="pointer-events-auto text-sm leading-none">
+                                                        By messaging ChatGPT, an AI chatbot, you agree to our 
+                                                        <a href="https://openai.com/terms" target="_blank" class="text-token-text-primary decoration-token-text-primary underline" rel="noreferrer">Terms</a> 
+                                                        and have read our 
+                                                        <a href="https://openai.com/privacy" target="_blank" class="text-token-text-primary decoration-token-text-primary underline" rel="noreferrer">Privacy Policy</a>. 
+                                                        See <a class="text-token-text-primary decoration-token-text-primary underline cursor-pointer">Cookie Preferences</a>.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accessibility Live Regions -->
+    <div aria-live="assertive" aria-atomic="true" class="sr-only" id="live-region-assertive"></div>
+    <div aria-live="polite" aria-atomic="true" class="sr-only" id="live-region-polite"></div>
+
+    <!-- ChatGPT API Integration -->
+    <script>
+        // Wait for DOM to be fully loaded
+        window.addEventListener('load', function() {
+            console.log('🚀 ChatGPT Interface Loading...');
+            
+            // Using OpenRouter API (Access to Multiple AI Models)
+            const OPENROUTER_API_KEY = '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';
+            const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+            
+            let MODEL = 'openai/gpt-4o'; // Default model (working)
+            
+            // Model selector dropdown functionality
+            const modelSelectorButton = document.getElementById('model-selector-button');
+            const modelDropdown = document.getElementById('model-dropdown');
+            const currentModelName = document.getElementById('current-model-name');
+            const modelOptions = document.querySelectorAll('.model-option');
+            
+            // Toggle dropdown
+            modelSelectorButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                modelDropdown.classList.toggle('hidden');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!modelDropdown.contains(e.target) && !modelSelectorButton.contains(e.target)) {
+                    modelDropdown.classList.add('hidden');
+                }
+            });
+            
+            // Handle model selection
+            modelOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    MODEL = this.getAttribute('data-model');
+                    const modelName = this.getAttribute('data-name');
+                    currentModelName.textContent = modelName;
+                    modelDropdown.classList.add('hidden');
+                    console.log('🤖 Model switched to:', MODEL);
+                });
+            });
+            
+            // Get DOM elements with a small delay to ensure they're ready
+            setTimeout(function() {
+                const form = document.querySelector('form');
+                const textarea = document.querySelector('textarea[name="prompt-textarea"]');
+                const sendButton = document.querySelector('[data-testid="send-button"]');
+                const newChatButton = document.getElementById('new-chat-button');
+                
+                console.log('Form:', !!form, 'Textarea:', !!textarea, 'Button:', !!sendButton);
+                console.log('Textarea element:', textarea);
+                
+                if (!form || !textarea || !sendButton) {
+                    console.error('❌ Elements not found!');
+                    alert('Error: Page elements not found. Please refresh the page.');
+                    return;
+                }
+                
+                // Create messages container with proper styling and positioning
+                const messagesContainer = document.createElement('div');
+                messagesContainer.id = 'messages-container';
+                messagesContainer.style.cssText = 'flex: 1; overflow-y: auto; overflow-x: hidden; padding: 20px; padding-bottom: 20px; max-width: 48rem; margin: 0 auto; width: 100%; display: flex; flex-direction: column; scroll-behavior: smooth; min-height: 0;';
+                
+                const composerParent = document.querySelector('.composer-parent');
+                const threadBottom = document.querySelector('#thread-bottom-container');
+                if (composerParent && threadBottom) {
+                    composerParent.insertBefore(messagesContainer, threadBottom);
+                }
+                
+                // Chat history management with localStorage
+                const CHAT_HISTORY_KEY = 'chatgpt_chat_history';
+                let chatHistory = [];
+                
+                // Load chat history from localStorage
+                function loadChatHistory() {
+                    try {
+                        const saved = localStorage.getItem(CHAT_HISTORY_KEY);
+                        if (saved) {
+                            chatHistory = JSON.parse(saved);
+                            console.log('📚 Loaded', chatHistory.length, 'messages from history');
+                            // Restore messages to UI
+                            chatHistory.forEach(msg => {
+                                addMessage(msg.content, msg.role, false); // false = don't save again
+                            });
+                        }
+                    } catch (e) {
+                        console.error('Error loading chat history:', e);
+                    }
+                }
+                
+                // Save chat history to localStorage
+                function saveChatHistory() {
+                    try {
+                        localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(chatHistory));
+                        console.log('💾 Saved', chatHistory.length, 'messages');
+                    } catch (e) {
+                        console.error('Error saving chat history:', e);
+                    }
+                }
+                
+                // Clear chat history
+                function clearChatHistory() {
+                    chatHistory = [];
+                    localStorage.removeItem(CHAT_HISTORY_KEY);
+                    console.log('🗑️ Chat history cleared');
+                }
+                
+                // Load existing chat history on page load
+                loadChatHistory();
+                
+                // Function to send message
+                async function sendMessage() {
+                    const message = textarea.value.trim();
+                    
+                    console.log('📤 Attempting to send:', message);
+                    
+                    if (!message) return;
+                    
+                    textarea.disabled = true;
+                    sendButton.disabled = true;
+                    
+                    addMessage(message, 'user');
+                    textarea.value = '';
+                    textarea.style.height = 'auto';
+                    
+                    const typingId = showTypingIndicator();
+                    
+                    try {
+                        const response = await fetch(OPENROUTER_API_URL, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+                                'HTTP-Referer': window.location.href,
+                                'X-Title': 'Portfolio AI Chat'
+                            },
+                            body: JSON.stringify({
+                                model: MODEL,
+                                messages: [
+                                    {
+                                        role: 'user',
+                                        content: message
+                                    }
+                                ],
+                                temperature: 0.7,
+                                max_tokens: MODEL.includes('claude') ? 1000 : 2048 // Lower tokens for Claude
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        removeTypingIndicator(typingId);
+                        
+                        console.log('API Response:', response.status, data);
+                        
+                        if (response.ok && data.choices && data.choices[0]) {
+                            addMessage(data.choices[0].message.content, 'assistant');
+                        } else {
+                            // Show detailed error message
+                            let errorMsg = 'Sorry, I encountered an error. ';
+                            if (data.error) {
+                                errorMsg += data.error.message || 'Please try again.';
+                                console.error('API Error:', data.error);
+                            } else {
+                                errorMsg += 'Please try again.';
+                            }
+                            addMessage(errorMsg, 'assistant');
+                        }
+                    } catch (error) {
+                        removeTypingIndicator(typingId);
+                        addMessage('Sorry, could not connect. Check your internet.', 'assistant');
+                        console.error(error);
+                    }
+                    
+                    textarea.disabled = false;
+                    sendButton.disabled = false;
+                    textarea.focus();
+                }
+                
+                // Handle form submission
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    console.log('📝 Form submitted');
+                    await sendMessage();
+                });
+                
+                // Handle Enter key press (Shift+Enter for new line)
+                textarea.addEventListener('keydown', function(e) {
+                    console.log('⌨️ Key pressed:', e.key, 'Shift:', e.shiftKey, 'Ctrl:', e.ctrlKey);
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('✅ Enter detected - sending message');
+                        sendMessage();
+                        return false;
+                    }
+                }, true);
+                
+                // Also add keypress listener as backup
+                textarea.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('✅ Enter (keypress) detected - sending message');
+                        sendMessage();
+                        return false;
+                    }
+                }, true);
+                
+                // Handle send button click
+                sendButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🖱️ Send button clicked');
+                    sendMessage();
+                });
+                
+                // New Chat button functionality
+                if (newChatButton) {
+                    newChatButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log('🆕 New chat clicked');
+                        // Clear messages from UI
+                        messagesContainer.innerHTML = '';
+                        // Clear chat history
+                        clearChatHistory();
+                        // Clear textarea
+                        textarea.value = '';
+                        textarea.style.height = 'auto';
+                        // Focus textarea
+                        textarea.focus();
+                    });
+                }
+                
+                console.log('✅ All event listeners attached!');
+                console.log('💡 Press Enter to send, Shift+Enter for new line');
+                
+                function addMessage(content, role, shouldSave = true) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = 'w-full py-2 px-4';
+                    messageDiv.style.cssText = 'display: flex; justify-content: ' + (role === 'user' ? 'flex-end' : 'flex-start') + ';';
+                    
+                    const contentDiv = document.createElement('div');
+                    contentDiv.style.cssText = 'max-width: 70%; padding: 12px 16px; border-radius: 18px; word-wrap: break-word; line-height: 1.5; white-space: pre-wrap; ' +
+                        (role === 'user' 
+                            ? 'background: #2f2f2f; color: #ececec; border-bottom-right-radius: 4px;' 
+                            : 'background: #3e3e3e; color: #ececec; border-bottom-left-radius: 4px;');
+                    contentDiv.textContent = content;
+                    
+                    messageDiv.appendChild(contentDiv);
+                    messagesContainer.appendChild(messageDiv);
+                    
+                    // Save to chat history
+                    if (shouldSave) {
+                        chatHistory.push({ content, role, timestamp: Date.now() });
+                        saveChatHistory();
+                    }
+                    
+                    // Force immediate scroll to bottom
+                    requestAnimationFrame(() => {
+                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                    });
+                }
+                
+                function showTypingIndicator() {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.id = 'typing-indicator';
+                    messageDiv.className = 'w-full py-2 px-4';
+                    messageDiv.style.cssText = 'display: flex; justify-content: flex-start;';
+                    
+                    const contentDiv = document.createElement('div');
+                    contentDiv.style.cssText = 'max-width: 70%; padding: 12px 16px; border-radius: 18px; background: #3e3e3e; color: #ececec; border-bottom-left-radius: 4px;';
+                    
+                    const dotsDiv = document.createElement('div');
+                    dotsDiv.style.cssText = 'display: flex; gap: 6px; align-items: center;';
+                    
+                    for (let i = 0; i < 3; i++) {
+                        const dot = document.createElement('div');
+                        dot.style.cssText = `width: 8px; height: 8px; border-radius: 50%; background: #666; animation: typing 1.4s infinite; animation-delay: ${i * 0.2}s;`;
+                        dotsDiv.appendChild(dot);
+                    }
+                    
+                    contentDiv.appendChild(dotsDiv);
+                    messageDiv.appendChild(contentDiv);
+                    messagesContainer.appendChild(messageDiv);
+                    
+                    // Force immediate scroll to bottom
+                    requestAnimationFrame(() => {
+                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                    });
+                    
+                    return 'typing-indicator';
+                }
+                
+                function removeTypingIndicator(id) {
+                    const typingDiv = document.getElementById(id);
+                    if (typingDiv) typingDiv.remove();
+                }
+                
+                // Add CSS
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes typing {
+                        0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+                        30% { transform: translateY(-8px); opacity: 1; }
+                    }
+                    @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(10px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    .wcDTda_fallbackTextarea {
+                        width: 100%; height: 24px !important; max-height: 24px !important;
+                        border: none; outline: none; background: transparent;
+                        resize: none; font-family: inherit; font-size: 16px;
+                        line-height: 1.5; color: inherit; overflow: hidden;
+                    }
+                    .wcDTda_fallbackTextarea::placeholder { color: #8e8ea0; }
+                    
+                    /* Custom Spotify-Style Scrollbar */
+                    #messages-container {
+                        scrollbar-width: thin;
+                        scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+                    }
+                    #messages-container::-webkit-scrollbar {
+                        width: 12px;
+                        height: 12px;
+                    }
+                    #messages-container::-webkit-scrollbar-track {
+                        background: transparent;
+                        margin: 8px 0;
+                    }
+                    #messages-container::-webkit-scrollbar-thumb {
+                        background: rgba(255, 255, 255, 0.5);
+                        border-radius: 6px;
+                        border: 3px solid transparent;
+                        background-clip: padding-box;
+                        transition: all 0.2s ease;
+                    }
+                    #messages-container::-webkit-scrollbar-thumb:hover {
+                        background: rgba(255, 255, 255, 0.7);
+                        border: 2px solid transparent;
+                        background-clip: padding-box;
+                    }
+                    #messages-container::-webkit-scrollbar-thumb:active {
+                        background: rgba(255, 255, 255, 0.9);
+                    }
+                    #messages-container::-webkit-scrollbar-corner {
+                        background: transparent;
+                    }
+                    
+                    /* Sidebar Scrollbar - Spotify Style */
+                    nav[aria-label="Chat history"] {
+                        scrollbar-width: thin;
+                        scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+                    }
+                    nav[aria-label="Chat history"]::-webkit-scrollbar {
+                        width: 12px;
+                    }
+                    nav[aria-label="Chat history"]::-webkit-scrollbar-track {
+                        background: transparent;
+                        margin: 8px 0;
+                    }
+                    nav[aria-label="Chat history"]::-webkit-scrollbar-thumb {
+                        background: rgba(255, 255, 255, 0.5);
+                        border-radius: 6px;
+                        border: 3px solid transparent;
+                        background-clip: padding-box;
+                        transition: all 0.2s ease;
+                    }
+                    nav[aria-label="Chat history"]::-webkit-scrollbar-thumb:hover {
+                        background: rgba(255, 255, 255, 0.7);
+                        border: 2px solid transparent;
+                        background-clip: padding-box;
+                    }
+                    
+                    /* Model Dropdown Scrollbar */
+                    #model-dropdown {
+                        scrollbar-width: thin;
+                        scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+                    }
+                    #model-dropdown::-webkit-scrollbar {
+                        width: 10px;
+                    }
+                    #model-dropdown::-webkit-scrollbar-track {
+                        background: transparent;
+                    }
+                    #model-dropdown::-webkit-scrollbar-thumb {
+                        background: rgba(255, 255, 255, 0.5);
+                        border-radius: 5px;
+                        border: 2px solid transparent;
+                        background-clip: padding-box;
+                    }
+                    #model-dropdown::-webkit-scrollbar-thumb:hover {
+                        background: rgba(255, 255, 255, 0.7);
+                    }
+                    
+                    /* Main Content Area Scrollbar */
+                    [data-scroll-root] {
+                        scrollbar-width: thin;
+                        scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+                    }
+                    [data-scroll-root]::-webkit-scrollbar {
+                        width: 12px;
+                    }
+                    [data-scroll-root]::-webkit-scrollbar-track {
+                        background: transparent;
+                        margin: 8px 0;
+                    }
+                    [data-scroll-root]::-webkit-scrollbar-thumb {
+                        background: rgba(255, 255, 255, 0.5);
+                        border-radius: 6px;
+                        border: 3px solid transparent;
+                        background-clip: padding-box;
+                        transition: all 0.2s ease;
+                    }
+                    [data-scroll-root]::-webkit-scrollbar-thumb:hover {
+                        background: rgba(255, 255, 255, 0.7);
+                        border: 2px solid transparent;
+                        background-clip: padding-box;
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                console.log('✅ ChatGPT interface ready!');
+            }, 100);
+        });
+    </script>
+</body>
+</html>

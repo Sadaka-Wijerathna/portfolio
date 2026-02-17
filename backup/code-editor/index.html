@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio Code</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="vscode-container">
+        <!-- Activity Bar (Left Sidebar) -->
+        <div class="activity-bar">
+            <div class="activity-icons">
+                <div class="activity-icon active" data-tooltip="Explorer" data-view="explorer">
+                    <i class="fas fa-copy"></i>
+                </div>
+                <div class="activity-icon" data-tooltip="Search" data-view="search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="activity-icon" data-tooltip="Source Control" data-view="git">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="activity-icon" data-tooltip="Extensions" data-view="extensions">
+                    <i class="fas fa-th-large"></i>
+                </div>
+            </div>
+            <div class="activity-icons-bottom">
+                <div class="activity-icon" data-tooltip="Settings" data-view="settings">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-title" id="sidebarTitle">EXPLORER</span>
+                <div class="sidebar-actions">
+                    <i class="fas fa-file" title="New File"></i>
+                    <i class="fas fa-folder" title="New Folder"></i>
+                    <i class="fas fa-sync-alt" title="Refresh"></i>
+                </div>
+            </div>
+            <div class="sidebar-content" id="sidebarContent">
+                <!-- Explorer View -->
+                <div class="sidebar-view" id="explorerView">
+                    <div class="folder-tree">
+                        <div class="folder-item expanded">
+                            <i class="fas fa-chevron-down folder-icon"></i>
+                            <i class="fas fa-folder-open"></i>
+                            <span>portfolio</span>
+                        </div>
+                        <div class="file-list">
+                            <div class="file-item active" data-file="javascript">
+                                <i class="fab fa-js-square" style="color: #f7df1e;"></i>
+                                <span>app.js</span>
+                            </div>
+                            <div class="file-item" data-file="typescript">
+                                <i class="fas fa-file-code" style="color: #3178c6;"></i>
+                                <span>app.ts</span>
+                            </div>
+                            <div class="file-item" data-file="react">
+                                <i class="fab fa-react" style="color: #61dafb;"></i>
+                                <span>Portfolio.tsx</span>
+                            </div>
+                            <div class="file-item" data-file="python">
+                                <i class="fab fa-python" style="color: #3776ab;"></i>
+                                <span>main.py</span>
+                            </div>
+                            <div class="file-item" data-file="html">
+                                <i class="fab fa-html5" style="color: #e34c26;"></i>
+                                <span>index.html</span>
+                            </div>
+                            <div class="file-item" data-file="css">
+                                <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+                                <span>styles.css</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search View -->
+                <div class="sidebar-view" id="searchView" style="display: none;">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search" id="searchInput">
+                        <div class="search-results" id="searchResults">
+                            <p class="search-placeholder">Type to search in files...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Source Control View -->
+                <div class="sidebar-view" id="gitView" style="display: none;">
+                    <div class="git-container">
+                        <div class="git-section">
+                            <div class="git-header">CHANGES</div>
+                            <div class="git-item">
+                                <i class="fas fa-file-code" style="color: #f7df1e;"></i>
+                                <span>app.js</span>
+                                <span class="git-status modified">M</span>
+                            </div>
+                            <div class="git-item">
+                                <i class="fas fa-file-code" style="color: #3178c6;"></i>
+                                <span>app.ts</span>
+                                <span class="git-status modified">M</span>
+                            </div>
+                        </div>
+                        <div class="git-section">
+                            <div class="git-header">STAGED CHANGES</div>
+                            <p class="git-empty">No staged changes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extensions View -->
+                <div class="sidebar-view" id="extensionsView" style="display: none;">
+                    <div class="extensions-container">
+                        <input type="text" class="search-input" placeholder="Search Extensions">
+                        <div class="extension-item">
+                            <div class="extension-icon">📦</div>
+                            <div class="extension-info">
+                                <div class="extension-name">Prettier</div>
+                                <div class="extension-desc">Code formatter</div>
+                            </div>
+                            <button class="extension-btn">Installed</button>
+                        </div>
+                        <div class="extension-item">
+                            <div class="extension-icon">🎨</div>
+                            <div class="extension-info">
+                                <div class="extension-name">ESLint</div>
+                                <div class="extension-desc">Linting utility</div>
+                            </div>
+                            <button class="extension-btn">Installed</button>
+                        </div>
+                        <div class="extension-item">
+                            <div class="extension-icon">⚛️</div>
+                            <div class="extension-info">
+                                <div class="extension-name">ES7+ React Snippets</div>
+                                <div class="extension-desc">React code snippets</div>
+                            </div>
+                            <button class="extension-btn">Installed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings View -->
+                <div class="sidebar-view" id="settingsView" style="display: none;">
+                    <div class="settings-container">
+                        <div class="settings-section">
+                            <div class="settings-header">Editor</div>
+                            <div class="settings-item">
+                                <label>Font Size</label>
+                                <input type="number" value="14" class="settings-input">
+                            </div>
+                            <div class="settings-item">
+                                <label>Tab Size</label>
+                                <input type="number" value="4" class="settings-input">
+                            </div>
+                            <div class="settings-item">
+                                <label>Word Wrap</label>
+                                <select class="settings-select">
+                                    <option>off</option>
+                                    <option>on</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <div class="settings-header">Theme</div>
+                            <div class="settings-item">
+                                <label>Color Theme</label>
+                                <select class="settings-select">
+                                    <option selected>Dark+ (default dark)</option>
+                                    <option>Light+ (default light)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Editor Area -->
+        <div class="editor-container">
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+                <div class="tab active" data-file="javascript">
+                    <i class="fab fa-js-square" style="color: #f7df1e;"></i>
+                    <span class="tab-name">app.js</span>
+                    <i class="fas fa-times tab-close"></i>
+                </div>
+            </div>
+
+            <!-- Editor -->
+            <div class="editor-wrapper">
+                <div class="breadcrumb">
+                    <i class="fas fa-folder"></i>
+                    <span>portfolio</span>
+                    <i class="fas fa-chevron-right"></i>
+                    <span id="currentFile">app.js</span>
+                </div>
+                
+                <div class="editor-body">
+                    <div class="line-numbers" id="lineNumbers"></div>
+                    <div class="editor-content">
+                        <textarea 
+                            id="codeEditor" 
+                            class="code-editor" 
+                            spellcheck="false"
+                            placeholder="// Start coding..."
+                        ></textarea>
+                    </div>
+                </div>
+
+                <!-- Minimap -->
+                <div class="minimap" id="minimap">
+                    <div class="minimap-content" id="minimapContent"></div>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="status-left">
+                    <span class="status-item">
+                        <i class="fas fa-code-branch"></i> main
+                    </span>
+                    <span class="status-item">
+                        <i class="fas fa-exclamation-triangle"></i> 0
+                        <i class="fas fa-exclamation-circle"></i> 0
+                    </span>
+                </div>
+                <div class="status-right">
+                    <span class="status-item" id="lineCol">Ln 1, Col 1</span>
+                    <span class="status-item">Spaces: 4</span>
+                    <span class="status-item">UTF-8</span>
+                    <span class="status-item">LF</span>
+                    <span class="status-item" id="languageMode">JavaScript</span>
+                    <span class="status-item">
+                        <i class="fas fa-bell"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="editor.js"></script>
+</body>
+</html>

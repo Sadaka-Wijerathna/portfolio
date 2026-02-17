@@ -1,0 +1,212 @@
+/* ============================================
+   Spotify-Style Custom Scrollbar
+   ============================================
+   A sleek, modern scrollbar design inspired by Spotify's UI
+   Features:
+   - Thin, rounded scrollbar thumb
+   - Smooth hover transitions
+   - Transparent track
+   - Works on all scrollable elements
+   ============================================ */
+
+/* Global Scrollbar Styles (Optional - apply to entire page) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 8px 0;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.2s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+*::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Messages Container Scrollbar */
+#messages-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+#messages-container::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+#messages-container::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 8px 0;
+}
+
+#messages-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.2s ease;
+}
+
+#messages-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+#messages-container::-webkit-scrollbar-thumb:active {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Sidebar Scrollbar */
+nav[aria-label="Chat history"] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+nav[aria-label="Chat history"]::-webkit-scrollbar {
+    width: 12px;
+}
+
+nav[aria-label="Chat history"]::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 8px 0;
+}
+
+nav[aria-label="Chat history"]::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.2s ease;
+}
+
+nav[aria-label="Chat history"]::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Model Dropdown Scrollbar */
+#model-dropdown {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+#model-dropdown::-webkit-scrollbar {
+    width: 10px;
+}
+
+#model-dropdown::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#model-dropdown::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.2s ease;
+}
+
+#model-dropdown::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Main Content Area Scrollbar */
+[data-scroll-root] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+[data-scroll-root]::-webkit-scrollbar {
+    width: 12px;
+}
+
+[data-scroll-root]::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 8px 0;
+}
+
+[data-scroll-root]::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.2s ease;
+}
+
+[data-scroll-root]::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* ============================================
+   Light Theme Variant (Optional)
+   ============================================
+   Uncomment to use with light backgrounds
+   ============================================ */
+
+/*
+.light-theme * {
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.light-theme *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.light-theme *::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.light-theme *::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.7);
+}
+*/
+
+/* ============================================
+   Colored Variant (Optional - Spotify Green)
+   ============================================ */
+
+/*
+.spotify-green-scrollbar * {
+    scrollbar-color: rgba(30, 215, 96, 0.6) transparent;
+}
+
+.spotify-green-scrollbar *::-webkit-scrollbar-thumb {
+    background: rgba(30, 215, 96, 0.6);
+}
+
+.spotify-green-scrollbar *::-webkit-scrollbar-thumb:hover {
+    background: rgba(30, 215, 96, 0.8);
+}
+
+.spotify-green-scrollbar *::-webkit-scrollbar-thumb:active {
+    background: rgba(30, 215, 96, 1);
+}
+*/

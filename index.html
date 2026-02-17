@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Theme initialization - MUST be first to prevent flash -->
+    <script>
+      // Initialize theme immediately before page renders
+      (function () {
+        const savedTheme = localStorage.getItem('theme') || 'night';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <link href="images/favicon.png" rel="icon" type="image/png" />
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="images/favicon-64x64.png" rel="icon" sizes="64x64" type="image/png" />
+    <link href="images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+    <link href="/site.webmanifest" rel="manifest" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="!" name="fragment" />
+    <!-- Analytics disabled to prevent 404 errors -->
+    <!-- <script data-site-id="e720f8b6279f" defer src="js/script.js"></script> -->
+    <link href="css/0.D2sdDkOF.css" rel="stylesheet" />
+    <link href="css/2.I3hjaRt_.css" rel="stylesheet" />
+    <title>Sadaka Wijerathna | Software Developer</title>
+    <!-- HEAD_svelte-ldp1an_START -->
+    <!-- HEAD_svelte-ldp1an_END -->
+    <!-- HEAD_svelte-18pzfb8_START -->
+    <meta content="index,follow" name="robots" />
+    <meta
+      content="Sadaka Wijerathna - Full-stack Web Developer &amp; AI Integration Specialist. Member of Frametoque Company"
+      name="description"
+    />
+    <link href="https://malith.dev" rel="canonical" />
+    <meta content="https://malith.dev" property="og:url" />
+    <meta content="Sadaka Wijerathna" property="og:title" />
+    <meta
+      content="Sadaka Wijerathna - Full-stack Web Developer &amp; AI Integration Specialist. Member of Frametoque Company"
+      property="og:description"
+    />
+    <meta content="images/Malith.dev-800x600.webp" property="og:image" />
+    <meta content="Website preview" property="og:image:alt" />
+    <meta content="800" property="og:image:width" />
+    <meta content="600" property="og:image:height" />
+    <meta content="images/Malith.dev-900x800.webp" property="og:image" />
+    <meta content="Website preview" property="og:image:alt" />
+    <meta content="900" property="og:image:width" />
+    <meta content="800" property="og:image:height" />
+    <meta content="images/Malith.dev-Preview.webp" property="og:image" />
+    <meta content="malith" property="og:site_name" />
+    <!-- HEAD_svelte-18pzfb8_END -->
+    <!-- HEAD_svelte-gw3qbj_START -->
+    <script async data-svelte-h="svelte-1ellqpp" defer src="js/tgs-player.js"></script>
+    <!-- HEAD_svelte-gw3qbj_END -->
+    <!-- Swiper Element CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <style>
+      /* Custom Swiper Pagination Positioning */
+      swiper-container::part(pagination) {
+        position: relative !important;
+        margin-top: 40px !important;
+      }
+      swiper-container {
+        padding-bottom: 60px !important;
+      }
+      
+      /* Activity Swiper Specific Styles */
+      #activity-swiper {
+        padding-bottom: 80px !important;
+        overflow: visible !important;
+        user-select: none;
+        position: relative;
+      }
+      
+      #activity-swiper .swiper-wrapper {
+        overflow: hidden !important;
+      }
+      
+      /* Hide navigation buttons */
+      #activity-swiper::part(button-prev),
+      #activity-swiper::part(button-next) {
+        display: none;
+      }
+      
+      /* Allow swipe on mobile - swipe area at top, iframe interactive */
+      @media (max-width: 768px) {
+        #activity-swiper .tgs-player-container {
+          min-height: 150px;
+          touch-action: pan-x;
+        }
+        #activity-swiper .mockup-window iframe {
+          pointer-events: auto;
+        }
+      }
+      
+      /* Enhanced Activity Slide Animations */
+      .activity-slide {
+        min-height: 600px;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      /* Ensure consistent sizing for all activity slides */
+      #activity-swiper swiper-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      /* Express.js logo theme-aware styling */
+      [data-theme="night"] .express-logo {
+        filter: brightness(0) invert(1);
+      }
+      
+      [data-theme="light"] .express-logo {
+        filter: none;
+      }
+      
+      /* Custom font weight for name */
+      .name-emphasis {
+        font-weight: 600 !important;
+        font-family: inherit !important;
+        opacity: 0.85 !important;
+      }
+      
+      /* Reduce stat-title font size */
+      .stat-title {
+        font-size: 0.95rem !important;
+      }
+    </style>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+      <div class="h-0 m-0">
+        <button data-svelte-h="svelte-zlbo36">
+          <img
+            alt="Single Developers logo"
+            class="logo z-10 cursor-pointer h-8 w-8 fixed top-5 left-6 svelte-1hmlgdy"
+            height="42"
+            src="images/apple-touch-icon.png"
+            style="transition: transform 0.4s;"
+            width="42"
+          />
+        </button>
+      </div>
+      <div class="h-0 m-0">
+        <label class="z-10 swap swap-rotate cursor-pointer h-6 w-6 fixed top-5 right-6 rounded-full duration-300 content-['']" for="theme-toggle">
+          <input id="theme-toggle" placeholder="theme-toggle" type="checkbox" />
+          <!-- Moon icon - shows when checkbox is checked -->
+          <svg class="swap-on fill-current w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+            ></path>
+          </svg>
+          <!-- Sun icon - shows when checkbox is unchecked -->
+          <svg class="swap-off fill-current w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+            ></path>
+          </svg>
+        </label>
+      </div>
+      <div class="hero min-h-screen">
+        <div class="hero-content flex-col max-w-[100vw] w-full justify-between lg:flex-row lg:max-w-screen-xl">
+          <div class="w-full lg:max-w-[40vw] lg:mr-8 mt-12 lg:mt-0" data-svelte-h="svelte-19jtaw">
+            <h1 class="text-5xl font-bold bg-gradient-to-r bg-clip-text leading-normal text-transparent from-[#048eaa] via-blue-500 to-[#048eaa] animate-text">
+              Hi, I'm Sadaka!
+            </h1>
+            <h2 class="text-2xl font-bold mb-4 mt-2 text-default-700 dark:text-slate-300">
+              Full-stack Web Developer
+              <span class="text-primary">&amp;</span>
+              <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">AI Integration Specialist</span>
+            </h2>
+            <p class="mb-6">
+              Experienced web developer crafting modern full-stack applications with cutting-edge technologies. Specializing in React/Next.js frontends, Node.js/Python backends, and AI-powered features that solve real business challenges. Transforming complex requirements into elegant, scalable web experiences that exceed expectations.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a class="btn btn-primary rounded-full px-8" href="#projects">Projects</a>
+              <a class="btn btn-outline rounded-full px-8" href="#contact">Contact</a>
+            </div>
+          </div>
+          <div class="lg:ml-auto w-[320px] h-[320px] animation-container svelte-buazeg">
+            <tgs-player autoplay class="svelte-buazeg" loop src="/anim/dev.tgs" style="width: 320px; height: 320px;"></tgs-player>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="flex flex-wrap items-center justify-between m-6 max-w-screen-xl lg:mx-auto scroll-mt-2.5">
+        <a class="inline-flex items-center justify-left w-full my-12" href="#projects" id="projects" data-svelte-h="svelte-4hm5mm">
+          <tgs-player autoplay loop src="/anim/projects.tgs" style="width: 30px; height: 30px;"></tgs-player>
+          <h1 class="text-4xl ml-2">Projects</h1>
+        </a>
+        <div class="items-center justify-center m-2 w-full lg:max-w-screen-xl">
+          <swiper-container init="false">
+            <swiper-slide id="slide0" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure class="mt-4 mb-4">
+                <a href="https://www.itechlk.store/" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="iTech LK Store" class="min-h-full min-w-full object-cover rounded-lg" src="images/projects/itechlk-store.webp" alt="iTech LK Store" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">iTech LK Store</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  Premium subscription accounts marketplace offering Netflix, ChatGPT Plus, Canva Pro, and more at affordable prices. Features instant delivery, secure payments, and 24/7 WhatsApp support with 1000+ satisfied customers.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://www.itechlk.store/" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide1" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure class="mt-4 mb-4">
+                <a href="https://elanora-fashion.vercel.app/" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="Elanora Fashion" class="min-h-full min-w-full object-cover rounded-lg" src="images/projects/elanora-fashion.webp" alt="Elanora Fashion" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">Elanora Fashion</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  Premium men's fashion e-commerce platform featuring contemporary clothing collections. Showcases shirts, outerwear, pants, and accessories with elegant design, product quick views, and seasonal collections for the modern gentleman.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://elanora-fashion.vercel.app/" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide2" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://t.me/s/LearniX_AI/9?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="LearniX AI" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/LearniX.webp" alt="LearniX AI Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">LearniX AI</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  Sri Lanka's 1st Sinhala-supported AI Learning Assistant (released in 2021), still outperforming modern AI
+                  models in Sinhala language and Physics education. Specialized in delivering accurate content in Sinhala.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://t.me/s/LearniX_AI/9?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide3" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://github.com/Malith-Rukshan/Suno-API?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="Suno AI" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/Suno-AI-API-Logo.webp" alt="Suno AI Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">Suno AI</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  A Python library and REST API utilizing the Suno AI for Generative Music Production. This open-source
+                  project is available on GitHub.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://github.com/Malith-Rukshan/Suno-API?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide4" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://quizup.lk?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="QuizUp" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/QuizUp.webp" alt="QuizUp Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">QuizUp</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  An interactive quiz app for Sri Lankan O/L and A/L students, combining real-time multiplayer battles,
+                  leaderboards, and analytics to make learning fun and competitive.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://quizup.lk?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide5" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://play.google.com/store/apps/details?id=com.sdev.alphav2ray&hl=en&gl=US" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="Alpha V2ray" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/AlphaV2ray.webp" alt="Alpha V2ray Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">Alpha V2ray</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  Android VPN app based on V2ray, featuring super Cool UI and a strong community. Serving over 1 Million
+                  users, it ensures a free, fast, and secures connection.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://play.google.com/store/apps/details?id=com.sdev.alphav2ray&hl=en&gl=US" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide6" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://ap.lk?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="AP.LK" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/AP.LK.webp" alt="AP.LK Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">AP.LK</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  Sri Lanka's leading AI-powered LMS with features like Student AI Helper and Marks Analysis, serving 130,000+
+                  students with a dynamic, visually engaging experience.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://ap.lk?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide7" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://t.me/ReceiveSMSRobot?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="Receive SMS Bot" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/ReceiveSMSRobot.webp" alt="Receive SMS Bot Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">Receive SMS Bot</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  A powerful Telegram bot providing free SMS numbers from over 40 countries. It features a user-friendly
+                  interface, and is used by over 1.5 million users globally.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://t.me/ReceiveSMSRobot?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide8" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://cmwithmn.lk?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="CMwithMN.LK - LMS" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/CMwithMN.LK.webp" alt="CMwithMN.LK - LMS Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">CMwithMN.LK - LMS</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  A modern Learning Management System (LMS) for Sri Lankan students, offering a comprehensive platform for
+                  online learning with advanced features and a user-friendly interface.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://cmwithmn.lk?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide9" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://t.me/WeatherAppRobot/app?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="Weather App - TMA" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/Weather-Mini-App.webp" alt="Weather App - TMA Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">Weather App - TMA</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  A Telegram Mini App that provides real-time weather updates 🌤️ for your current location 📍 with a sleek
+                  and modern UI ✨. (Telegram Bot API 8.0+ Geolocation Access)
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://t.me/WeatherAppRobot/app?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide10" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://upulweerasinghe.lk?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="A/L SFT LMS" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/UpulWeerasingha.LK.webp" alt="A/L SFT LMS Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">A/L SFT LMS</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  Sri Lanka's leading SFT Class Modern LMS with features Marks Analysis, Online Payments, Advanced Admin
+                  Panels, serving 12,000+ students with a dynamic, visually engaging experience.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://upulweerasinghe.lk?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide11" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://geoip-api.malith.dev?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="GeoIP API" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/geoip-api.webp" alt="GeoIP API Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">GeoIP API</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  Self-hosted IP geolocation API and Python package with no external API dependencies. Lookup IP data using
+                  local databases with Docker support.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://geoip-api.malith.dev?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide12" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://thumb-gen.malith.dev?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="Thumb-Gen - PWA" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/Thumb-Gen.webp" alt="Thumb-Gen - PWA Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">Thumb-Gen - PWA</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  A modern, privacy-first thumbnail generation tool that allows to generate thumbnails for videos, Lottie
+                  animations (TGS), images & text. Privacy-first, runs 100% client-side processing.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://thumb-gen.malith.dev?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide13" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://github.com/Malith-Rukshan/whisper-transcriber-bot?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="Whisper Transcriber Bot" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/Whisper-Transcriber-Bot.webp" alt="Whisper Transcriber Bot Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">Whisper Transcriber Bot</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  AI-powered Telegram bot for voice-to-text transcription using OpenAI Whisper. CPU-only processing,
+                  privacy-focused with local processing. Self-hostable with Docker support and resource usage.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://github.com/Malith-Rukshan/whisper-transcriber-bot?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide id="slide14" class="project card card-compact w-96 bg-base-100 min-h-[450px]">
+              <figure>
+                <a href="https://github.com/Malith-Rukshan/PyTubeSearch/?utm_source=malith.dev" target="_blank" class="min-h-full min-w-full object-cover">
+                  <img id="PyTubeSearch - Python Package" class="min-h-full min-w-full object-cover rounded-box" src="images/projects/PyTubeSearch.webp" alt="PyTubeSearch - Python Package Logo" />
+                </a>
+              </figure>
+              <div class="card-body max-h-[200px] min-h-[150px]">
+                <h2 class="card-title">PyTubeSearch - Python Package</h2>
+                <p class="max-h-[75px] min-h-[75px]">
+                  A powerful Python package for searching YouTube content by keywords with no IP blocking or robot detection.
+                  Features unit & integration tests, and comprehensive testing, type-safe codebase.
+                </p>
+                <div class="card-actions justify-end">
+                  <a class="btn" href="https://github.com/Malith-Rukshan/PyTubeSearch/?utm_source=malith.dev" target="_blank">View</a>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+        <div class="w-full justify-center lg:justify-end flex">
+          <label for="projectsModal" class="cursor-pointer btn gap-2 right-0" data-svelte-h="svelte-1hw6ufa">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+            GitHub Projects
+          </label>
+          <input type="checkbox" id="projectsModal" class="modal-toggle" />
+          <label for="projectsModal" class="modal modal-bottom cursor-pointer sm:modal-action">
+            <label class="modal-box max-h-[50%] lg:max-h-[75%]" for="">
+              <label for="projectsModal" class="btn btn-sm btn-circle sticky right-2 top-2 z-10" data-svelte-h="svelte-8mq8jl">✕</label>
+              <div class="flex flex-wrap items-center justify-center m-6 max-w-screen-xl mx-auto gap-6">
+                <div class="hero-content text-center">
+                  <div class="max-w-md">
+                    <h1 class="glitch text-5xl font-bold" data-svelte-h="svelte-1ypfhbv">Ooops!</h1>
+                    <div data-svelte-h="svelte-oappty">Looks like there's nothing here.</div>
+                    <btn class="btn btn-info" data-svelte-h="svelte-168qd1q">Retry</btn>
+                  </div>
+                </div>
+              </div>
+            </label>
+          </label>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="flex flex-wrap items-center justify-between m-6 max-w-screen-xl lg:mx-auto">
+        <a class="inline-flex items-center justify-left w-full my-12" href="#experience" id="experience" data-svelte-h="svelte-3k78j7">
+          <tgs-player autoplay loop src="/anim/experience.tgs" style="width: 30px; height: 30px;"></tgs-player>
+          <h1 class="text-4xl ml-2">Experience</h1>
+        </a>
+        <div class="w-full mb-12">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <!-- ReactJS -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/reactjs.webp" alt="ReactJS icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">ReactJS</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Expert</div>
+                <p class="text-sm mb-2">Building modern, component-based UI applications with hooks and state management</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>4+ years • 50+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Next.js -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/next.js.webp" alt="Next.js icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">Next.js</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Advanced</div>
+                <p class="text-sm mb-2">Server-side rendering, static generation, and full-stack React applications</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 30+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- JavaScript -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/javascript.webp" alt="JavaScript icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">JavaScript</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Expert</div>
+                <p class="text-sm mb-2">Core web development, ES6+, async programming, and interactive features</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>5+ years • 100+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- TypeScript -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/typescript.webp" alt="TypeScript icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">TypeScript</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Advanced</div>
+                <p class="text-sm mb-2">Type-safe development for scalable and maintainable web applications</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 60+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Node.js -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/node-js.webp" alt="Node.js icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">Node.js</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Expert</div>
+                <p class="text-sm mb-2">Backend development, RESTful APIs, and server-side JavaScript</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>4+ years • 70+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Python -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/python.webp" alt="Python icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">Python</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Advanced</div>
+                <p class="text-sm mb-2">Backend services, API development, automation, and AI integration</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>4+ years • 50+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- PHP -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/php-logo.webp" alt="PHP icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">PHP</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Intermediate</div>
+                <p class="text-sm mb-2">Server-side scripting, web development, and backend integration</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 25+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- PostgreSQL -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/postgresql.webp" alt="PostgreSQL icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">PostgreSQL</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Advanced</div>
+                <p class="text-sm mb-2">Relational database design, query optimization, and complex data modeling</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 40+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Figma -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/figma.webp" alt="Figma icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">Figma</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Advanced</div>
+                <p class="text-sm mb-2">UI/UX design, prototyping, and design-to-code workflows</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 40+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Tailwind CSS -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/tailwind.webp" alt="Tailwind CSS icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">Tailwind CSS</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Expert</div>
+                <p class="text-sm mb-2">Utility-first CSS framework for rapid UI development and responsive design</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 40+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- AI Integration -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/ai.webp" alt="AI icon" class="w-10 h-10 mr-3" />
+                  <h2 class="card-title text-lg">AI Integration</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Advanced</div>
+                <p class="text-sm mb-2">Implementing AI features, API integration, and intelligent web applications</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>2+ years • 15+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Git/GitHub -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/git-dark.webp" alt="Git/GitHub icon" class="w-10 h-10 mr-3 theme-logo" data-light-src="images/git-light.webp" data-dark-src="images/git-dark.webp" />
+                  <h2 class="card-title text-lg">Git/GitHub</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Expert</div>
+                <p class="text-sm mb-2">Version control, collaboration, code management, and CI/CD workflows</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>5+ years • 100+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- AWS -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/aws-dark.webp" alt="AWS icon" class="w-10 h-10 mr-3 theme-logo" data-light-src="images/aws-light.webp" data-dark-src="images/aws-dark.webp" style="object-fit: contain;" />
+                  <h2 class="card-title text-lg">AWS</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Advanced</div>
+                <p class="text-sm mb-2">Cloud infrastructure, EC2, S3, Lambda, and scalable deployment solutions</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 35+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Vercel -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/vercel.webp" alt="Vercel icon" class="w-8 h-8 mr-3" style="object-fit: contain;" />
+                  <h2 class="card-title text-lg">Vercel</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Expert</div>
+                <p class="text-sm mb-2">Serverless deployment platform optimized for Next.js and modern web apps</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>3+ years • 45+ projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Express.js -->
+            <div class="card bg-base-200 transition-all duration-300">
+              <div class="card-body p-5">
+                <div class="flex items-center mb-3">
+                  <img src="images/express.webp" alt="Express.js icon" class="w-10 h-10 mr-3 express-logo" />
+                  <h2 class="card-title text-lg">Express.js</h2>
+                </div>
+                <div class="badge badge-primary mb-2">Expert</div>
+                <p class="text-sm mb-2">Fast, minimalist web framework for building robust Node.js APIs and backends</p>
+                <div class="card-actions justify-end mt-2 text-xs opacity-75">
+                  <span>4+ years • 60+ projects</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="flex flex-wrap items-center justify-between m-6 max-w-screen-xl lg:mx-auto mt-12">
+        <div class="flex flex-wrap w-full justify-evenly">
+          <div class="work max-w-full svelte-1udjjkf">
+            <div class="tooltip tooltip-right" data-tip="Latest three positions" data-svelte-h="svelte-81r70g">
+              <a class="inline-flex items-center justify-left text-left w-full" href="#work" id="work">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="3" y1="22" x2="21" y2="22"></line>
+                  <line x1="6" y1="18" x2="6" y2="11"></line>
+                  <line x1="10" y1="18" x2="10" y2="11"></line>
+                  <line x1="14" y1="18" x2="14" y2="11"></line>
+                  <line x1="18" y1="18" x2="18" y2="11"></line>
+                  <polygon points="12 2 20 7 4 7"></polygon>
+                </svg>
+                <h1 class="text-2xl ml-2">Work</h1>
+              </a>
+            </div>
+            <div class="overflow-x-auto flex justify-center">
+              <ul class="steps md:steps-vertical md:min-w-[400px]">
+                <li data-content="" class="step h-[250px] step-icon-sdevz !min-w-[330px] max-w-[330px] m-1 svelte-1udjjkf">
+                  <a href="https://frametoque.online" target="_blank" class="no-underline text-inherit">
+                    <div class="stats stats-vertical bg-base-200 min-w-[320px] max-w-[320px]">
+                      <div class="stat">
+                        <div class="stat-value text-xl">Frametoque</div>
+                        <div class="stat-desc">Member | Web Developer</div>
+                      </div>
+                      <div class="stat">
+                        <div class="stat-title">Sri Lanka</div>
+                        <div class="stat-desc">May 2026 - Current</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li data-content="" class="step h-[250px] step-icon-tg !min-w-[330px] max-w-[330px] m-1 svelte-1udjjkf">
+                  <div class="stats stats-vertical bg-base-200 min-w-[320px] max-w-[320px]">
+                    <div class="stat">
+                      <div class="stat-value text-xl">BuddyStore</div>
+                      <div class="stat-desc">Founder | Web Developer</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-title">Sri Lanka</div>
+                      <div class="stat-desc">May 2020 - Jan 2026</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="education max-w-full svelte-1udjjkf">
+            <a class="inline-flex items-center justify-left text-left w-full" href="#education" id="education" data-svelte-h="svelte-10c5cms">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+              <h1 class="text-2xl ml-2">Education</h1>
+            </a>
+            <div class="overflow-x-auto flex justify-center">
+              <ul class="steps md:steps-vertical md:min-w-[400px]">
+                <li data-content="" class="step h-[250px] step-icon-mora !min-w-[330px] max-w-[330px] m-1 svelte-1udjjkf">
+                  <div class="stats stats-vertical bg-base-200 min-w-[320px] max-w-[320px]">
+                    <div class="stat">
+                      <div class="stat-value text-xl">DS Senanayake College</div>
+                      <div class="stat-title">Grade 12 - G.C.E A/L Science Stream</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-title">Colombo 06, LK</div>
+                      <div class="stat-desc">Jul 2019 - 2026 Current</div>
+                    </div>
+                  </div>
+                </li>
+                <li data-content="" class="step h-[250px] step-icon-uni !min-w-[330px] max-w-[330px] m-1 svelte-1udjjkf">
+                  <div class="stats stats-vertical bg-base-200 min-w-[320px] max-w-[320px]">
+                    <div class="stat">
+                      <div class="stat-value text-xl">Isipathana College</div>
+                      <div class="stat-title">Grade 6</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-title">Colombo 05, LK</div>
+                      <div class="stat-desc">Jan 2019 - Jun 2019</div>
+                    </div>
+                  </div>
+                </li>
+                <li data-content="" class="step h-[250px] step-icon-al !min-w-[330px] max-w-[330px] m-1 svelte-1udjjkf">
+                  <div class="stats stats-vertical bg-base-200 min-w-[320px] max-w-[320px]">
+                    <div class="stat">
+                      <div class="stat-value text-xl">Science College</div>
+                      <div class="stat-title">Grade 1 - 5 (Primary Education)</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-title">Dehiwala Mount Lavinia, LK</div>
+                      <div class="stat-desc">2013 - 2018</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="flex flex-wrap items-center justify-between m-6 max-w-screen-xl lg:mx-auto">
+        <a class="inline-flex items-center justify-left w-full my-12" href="#activity" id="activity" data-svelte-h="svelte-10medup">
+          <tgs-player autoplay loop src="/anim/activity.tgs" style="width: 30px; height: 30px;"></tgs-player>
+          <h1 class="text-3xl ml-2">Activity</h1>
+        </a>
+        <div class="items-center justify-center m-2 w-full lg:max-w-screen-xl relative">
+          <!-- Previous Button -->
+          <button id="activity-prev" class="group absolute left-2 lg:left-12 top-[150px] z-10 bg-blue-500/90 hover:bg-blue-600 backdrop-blur-sm text-white rounded-full p-4 transition-all duration-300 flex items-center justify-center w-14 h-14 border border-blue-400/30 hover:border-blue-300/50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 group-hover:opacity-100 transition-opacity">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <!-- Next Button -->
+          <button id="activity-next" class="group absolute right-2 lg:right-12 top-[150px] z-10 bg-blue-500/90 hover:bg-blue-600 backdrop-blur-sm text-white rounded-full p-4 transition-all duration-300 flex items-center justify-center w-14 h-14 border border-blue-400/30 hover:border-blue-300/50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 group-hover:opacity-100 transition-opacity">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          
+          <swiper-container init="false" id="activity-swiper">
+            <!-- Slide 1: Listening to Music -->
+            <swiper-slide class="activity-slide">
+              <div class="flex flex-col items-center w-full">
+                <!-- Title and Animation Section -->
+                <div class="tgs-player-container mb-8 svelte-raptrb">
+                  <div class="flex flex-col items-center text-center svelte-raptrb">
+                    <tgs-player autoplay loop src="/anim/music.tgs" style="width: 120px; height: 120px"></tgs-player>
+                    <p class="mt-2 text-lg font-semibold">Listening to Music</p>
+                  </div>
+                </div>
+                <!-- Blue Mockup Window Container (Consistent) -->
+                <div class="flex flex-wrap items-center justify-around w-full px-0 lg:px-8">
+                  <div class="mockup-window bg-base-300 w-full max-w-full lg:max-w-[95%]">
+                    <p class="p-4">
+                      As a passionate melophile, music is an integral part of my coding journey. It enhances my focus and creativity,
+                      transforming demanding coding sessions into serene and enjoyable experiences. Below is a curated selection of my
+                      favorite tracks that accompany me while I work. Dive into the soothing sounds and discover your new coding anthem!
+                    </p>
+                    <div class="flex justify-center p-4 border-t border-base-300">
+                      <iframe
+                        title="Spotify embed"
+                        src="player.html"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        class="rounded-xl"
+                        allow="encrypted-media"
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+            
+            <!-- Slide 2: Research & Learning -->
+            <swiper-slide class="activity-slide">
+              <div class="flex flex-col items-center w-full">
+                <!-- Title and Animation Section -->
+                <div class="tgs-player-container mb-8 svelte-raptrb">
+                  <div class="flex flex-col items-center text-center svelte-raptrb">
+                    <tgs-player autoplay loop src="/anim/research.tgs" style="width: 120px; height: 120px"></tgs-player>
+                    <p class="mt-2 text-lg font-semibold">Research & Learning</p>
+                  </div>
+                </div>
+                <!-- Blue Mockup Window Container (Consistent) -->
+                <div class="flex flex-wrap items-center justify-around w-full px-0 lg:px-8">
+                  <div class="mockup-window bg-base-300 w-full max-w-full lg:max-w-[95%]">
+                    <p class="p-4">
+                      Continuous learning and research are essential to staying ahead in the ever-evolving tech landscape. 
+                      I leverage AI-powered tools like ChatGPT to explore new concepts, solve complex problems, and expand my knowledge. 
+                      Dive into the interactive AI assistant below and discover innovative solutions to challenging development tasks!
+                    </p>
+                    <div class="flex justify-center p-4 border-t border-base-300">
+                      <iframe
+                        title="ChatGPT Interface"
+                        src="Chatgpt/index.html"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        class="rounded-xl"
+                        allow="clipboard-write"
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+            
+            <!-- Slide 3: Coding & Development -->
+            <swiper-slide class="activity-slide">
+              <div class="flex flex-col items-center w-full">
+                <!-- Title and Animation Section -->
+                <div class="tgs-player-container mb-8 svelte-raptrb">
+                  <div class="flex flex-col items-center text-center svelte-raptrb">
+                    <tgs-player autoplay loop src="/anim/dev.tgs" style="width: 120px; height: 120px"></tgs-player>
+                    <p class="mt-2 text-lg font-semibold">Coding & Development</p>
+                  </div>
+                </div>
+                <!-- Blue Mockup Window Container (Consistent) -->
+                <div class="flex flex-wrap items-center justify-around w-full lg:px-8">
+                  <div class="mockup-window bg-base-300 w-full max-w-full lg:max-w-[95%]">
+                    <p class="p-4">
+                      Step into my development workspace! This VS Code editor replicates my daily coding environment where I build modern web applications. 
+                      Explore real code from my projects across multiple languages and frameworks. Click any file to dive into production-ready examples!
+                      Experience the tools and workflows I use to craft scalable, high-performance solutions.
+                    </p>
+                    <div class="flex justify-center p-4 border-t border-base-300">
+                      <iframe
+                        title="Code Editor"
+                        src="code-editor/index.html"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        class="rounded-xl"
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+            
+            <!-- Slide 4: Studying & Learning -->
+            <swiper-slide class="activity-slide">
+              <div class="flex flex-col items-center w-full">
+                <!-- Title and Animation Section -->
+                <div class="tgs-player-container mb-8 svelte-raptrb">
+                  <div class="flex flex-col items-center text-center svelte-raptrb">
+                    <tgs-player autoplay loop src="/anim/study.tgs" style="width: 120px; height: 120px"></tgs-player>
+                    <p class="mt-2 text-lg font-semibold">Studying & Learning</p>
+                  </div>
+                </div>
+                <!-- Blue Mockup Window Container (Consistent) -->
+                <div class="flex flex-wrap items-center justify-around w-full">
+                  <div class="mockup-window bg-base-300 w-full max-w-full">
+                    <p class="p-4">
+                      Continuous learning through studying is fundamental to staying current in tech. This interactive e-reader showcases my favorite technical books and articles. 
+                      Browse my digital library, track studying progress, and experience features like night mode, bookmarks, and customizable reading settings! Perfect for deep focus sessions and knowledge retention.
+                    </p>
+                    <div class="flex justify-center p-4 border-t border-base-300">
+                      <iframe
+                        title="E-Reader"
+                        src="e-reader/index.html"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        class="rounded-xl"
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="flex flex-wrap items-center justify-between m-6 max-w-screen-xl lg:mx-auto" data-svelte-h="svelte-pbbysx">
+        <a class="inline-flex items-center justify-left w-full my-12" href="#about" id="about">
+          <tgs-player autoplay loop src="/anim/about.tgs" style="width: 30px; height: 30px;"></tgs-player>
+          <h1 class="text-3xl ml-2">About</h1>
+        </a>
+        <div class="flex flex-wrap w-full">
+          <p class="mb-3">
+            I'm <span class="name-emphasis">Sadaka Wijerathna</span>, a Full-stack Web Developer from Sri Lanka and a member of
+            <a href="https://frametoque.online" class="text-blue-500" target="_blank">Frametoque</a> Company. I specialize in developing modern web applications with AI integration, responsive frontends using React and Next.js, robust backends with Node.js, Express.js, and Python, and scalable database solutions. With a strong commitment to open-source projects, I bring extensive experience in JavaScript, TypeScript, React, Next.js, Node.js, Express.js, Python, PHP, Tailwind CSS, PostgreSQL, Git, AWS, Vercel, and Figma.
+          </p>
+          <p>
+            Thank you for visiting my portfolio page! I appreciate your interest in my work and achievements. If you want
+            to dive deeper into my projects, explore the <a href="#projects" class="text-blue-400">links provided</a>.
+            Stay connected with me on social media for the latest updates on my work and insights. Let's connect and create
+            something amazing together!
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-between m-6 max-w-screen-xl lg:mx-auto" data-svelte-h="svelte-m12fvx">
+        <a class="inline-flex items.center justify-left w-full mt-12 mb-8" href="#contact" id="contact">
+          <tgs-player autoplay loop src="/anim/hands.tgs" style="width: 35px; height: 35px;"></tgs-player>
+          <h1 class="text-3xl ml-2">Collaborate</h1>
+        </a>
+        <div class="flex flex-wrap w-full">
+          <div class="overflow-x-auto w-full">
+            <table class="table table-zebra w-full">
+              <thead>
+                <tr>
+                  <th>Platform</th>
+                  <th>Purpose</th>
+                  <th>Contact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="flex gap-2 items-center">
+                    <img class="w-6 h-6 min-w-[1rem] object-contain" src="images/telegram.webp" alt="Telegram logo" />
+                    Telegram
+                  </td>
+                  <th>General inquiries, project discussions.</th>
+                  <th>
+                    <a class="text-blue-500" href="https://t.me/sadakawijerathna">@sadakawijerathna</a>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="flex gap-2 items-center">
+                    <img class="w-6 h-6 min-w-[1rem] object-contain" src="images/mail.webp" alt="Mail icon" />
+                    Mail
+                  </td>
+                  <th>Professional inquiries, projects.</th>
+                  <th>
+                    <a class="text-blue-500" href="mailto:sadakawijerathna@gmail.com">sadakawijerathna@gmail.com</a>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="flex gap-2 items-center">
+                    <img class="w-6 h-6 min-w-[1rem] object-contain" src="images/linkedin.webp" alt="Linkedin logo" />
+                    Linkedin (Company)
+                  </td>
+                  <th>Business inquiries, collaborations.</th>
+                  <th>
+                    <a class="text-blue-500" href="https://www.linkedin.com/company/frametoque/">FrameToque</a>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="flex gap-2 items-center">
+                    <img class="w-6 h-6 min-w-[1rem] object-contain" src="images/instagram.webp" alt="Instagram logo" />
+                    Instagram
+                  </td>
+                  <th>Project showcases, updates, creative content.</th>
+                  <th>
+                    <a class="text-blue-500" href="https://www.instagram.com/sadaka.wijerathna/">@sadaka.wijerathna</a>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="flex gap-2 items-center">
+                    <img class="w-6 h-6 min-w-[1rem] object-contain" src="images/discord.webp" alt="Discord logo" />
+                    Discord
+                  </td>
+                  <th>Tech talks, gaming, networking.</th>
+                  <th>
+                    <a class="text-blue-500" href="https://discord.com/users/sadaka.wijerathna">@sadaka.wijerathna</a>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="flex gap-2 items-center">
+                    <img class="w-6 h-6 min-w-[1rem] object-contain" src="images/git-light.webp" alt="GitHub logo" />
+                    GitHub
+                  </td>
+                  <th>Open source projects, code repositories.</th>
+                  <th>
+                    <a class="text-blue-500" href="https://github.com/Sadaka-Wijerathna">Sadaka-Wijerathna</a>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-between m-6 max-w-screen-xl lg:mx-auto" data-svelte-h="svelte-me6n0v">
+        <a class="inline-flex items-center justify-left w-full my-12" href="#technologies" id="technologies">
+          <tgs-player autoplay loop src="/anim/technologies&credits.tgs" style="width: 30px; height: 30px;"></tgs-player>
+          <h1 class="text-3xl ml-2">Technologies & Credits</h1>
+        </a>
+        <div class="flex flex-wrap w-full">
+          <div class="overflow-x-auto w-full">
+            <table class="table table-zebra w-full">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Source</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img class="w-6 h-6 min-w-[1rem] object-contain" src="images/svelte.webp" alt="SvelteKit logo" /></td>
+                  <th><a href="https://kit.svelte.dev/">SvelteKit</a></th>
+                  <th>Front-end framework</th>
+                </tr>
+                <tr>
+                  <td><img class="w-6 h-6 min-w-[1rem] object-contain" src="images/tailwind.webp" alt="TailwindCSS logo" /></td>
+                  <th><a href="https://tailwindcss.com/">TailwindCSS</a></th>
+                  <th>CSS framework</th>
+                </tr>
+                <tr>
+                  <td><img class="w-6 h-6 min-w-[1rem] object-contain" src="images/daisy.ico" alt="DaisyUI logo" /></td>
+                  <th><a href="https://daisyui.com/">DaisyUI</a></th>
+                  <th>Component library</th>
+                </tr>
+                <tr>
+                  <td><img class="w-6 h-6 min-w-[1rem] object-contain" src="images/telegram.webp" alt="Telegram logo" /></td>
+                  <th><a href="https://core.telegram.org/stickers">Telegram Stickers</a></th>
+                  <th>Creative Animations</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <footer class="footer items-center p-4 bg-neutral text-neutral-content justify-between grid-flow-col mt-12" data-svelte-h="svelte-5xywnf">
+        <div class="items-center grid-flow-col">
+          <img width="24" height="24" src="images/apple-touch-icon.png" alt="Single Developers logo" />
+        </div>
+        <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+          <a href="mailto:sadakawijerathna@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </a>
+          <a href="https://github.com/Sadaka-Wijerathna">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/frametoque/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="https://t.me/sadakawijerathna">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M22.05 1.577c-.393-.016-.784.08-1.117.235-.484.186-4.92 1.902-9.41 3.64-2.26.873-4.518 1.746-6.256 2.415-1.737.67-3.045 1.168-3.114 1.192-.46.16-1.082.362-1.61.984-.133.155-.267.354-.335.628s-.038.622.095.895c.265.547.714.773 1.244.976 1.76.564 3.58 1.102 5.087 1.608.556 1.96 1.09 3.927 1.618 5.89.174.394.553.54.944.544l-.002.02s.307.03.606-.042c.3-.07.677-.244 1.02-.565.377-.354 1.4-1.36 1.98-1.928l4.37 3.226.035.02s.484.34 1.192.388c.354.024.82-.044 1.22-.337.403-.294.67-.767.795-1.307.374-1.63 2.853-13.427 3.276-15.38l-.012.046c.296-1.1.187-2.108-.496-2.705-.342-.297-.736-.427-1.13-.444zm-.118 1.874c.027.025.025.025.002.027-.007-.002.08.118-.09.755l-.007.024-.005.022c-.432 1.997-2.936 13.9-3.27 15.356-.046.196-.065.182-.054.17-.1-.015-.285-.094-.3-.1l-7.48-5.525c2.562-2.467 5.182-4.7 7.827-7.08.468-.235.39-.96-.17-.972-.594.14-1.095.567-1.64.84-3.132 1.858-6.332 3.492-9.43 5.406-1.59-.553-3.177-1.012-4.643-1.467 1.272-.51 2.283-.886 3.278-1.27 1.738-.67 3.996-1.54 6.256-2.415 4.522-1.748 9.07-3.51 9.465-3.662l.032-.013.03-.013c.11-.05.173-.055.202-.057 0 0-.01-.033-.002-.026zM10.02 16.016l1.234.912c-.532.52-1.035 1.01-1.398 1.36z"></path>
+            </svg>
+          </a>
+        </div>
+      </footer>
+
+      <script data-cfasync="false" src="js/email-decode.min.js"></script>
+      <!-- SvelteKit initialization disabled - causes 404 errors for missing chunks -->
+      <!--
+      <script>
+        {
+          __sveltekit_5zkqxi = {
+            base: new URL(".", location).pathname.slice(0, -1),
+          };
+
+          const element = document.currentScript.parentElement;
+
+          Promise.all([
+            import("./_app/immutable/entry/start.B1A8DgeP.js"),
+            import("./_app/immutable/entry/app._NPy36T3.js"),
+          ]).then(([kit, app]) => {
+            kit.start(app, element, {
+              node_ids: [0, 2],
+              data: [null, null],
+              form: null,
+              error: null,
+            });
+          });
+        }
+      </script>
+      -->
+
+      <!-- Theme Toggle Script -->
+      <script>
+        (function() {
+          const htmlElement = document.documentElement;
+          const themeToggle = document.getElementById('theme-toggle');
+          
+          if (!themeToggle) {
+            console.error('Theme toggle element not found!');
+            return;
+          }
+          
+          // Function to update theme-aware logos
+          function updateThemeLogos(theme) {
+            const themeLogos = document.querySelectorAll('.theme-logo');
+            themeLogos.forEach(logo => {
+              const lightSrc = logo.getAttribute('data-light-src');
+              const darkSrc = logo.getAttribute('data-dark-src');
+              
+              if (theme === 'light' && lightSrc) {
+                logo.src = lightSrc;
+              } else if (theme === 'night' && darkSrc) {
+                logo.src = darkSrc;
+              }
+            });
+          }
+          
+          // Function to notify iframes about theme changes
+          function notifyIframesThemeChange(theme) {
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+              try {
+                iframe.contentWindow.postMessage({
+                  type: 'theme-change',
+                  theme: theme
+                }, '*');
+              } catch (e) {
+                console.log('Could not send theme message to iframe:', e);
+              }
+            });
+          }
+          
+          // Get current theme (already set by the script in head)
+          const currentTheme = htmlElement.getAttribute('data-theme') || 'night';
+          
+          // Set checkbox state to match current theme
+          // checked = light theme (sun icon shows)
+          // unchecked = dark theme (moon icon shows)
+          themeToggle.checked = currentTheme === 'light';
+          
+          // Update logos on page load
+          updateThemeLogos(currentTheme);
+          
+          // Notify iframes on page load (after a short delay to ensure they're loaded)
+          setTimeout(() => notifyIframesThemeChange(currentTheme), 500);
+          
+          // Listen for theme toggle changes
+          themeToggle.addEventListener('change', function() {
+            const newTheme = this.checked ? 'light' : 'night';
+            
+            // Update the data-theme attribute
+            htmlElement.setAttribute('data-theme', newTheme);
+            
+            // Save to localStorage
+            localStorage.setItem('theme', newTheme);
+            
+            // Update theme-aware logos
+            updateThemeLogos(newTheme);
+            
+            // Notify iframes about theme change
+            notifyIframesThemeChange(newTheme);
+          });
+        })();
+      </script>
+
+      <!-- Swiper Initialization Script -->
+      <script>
+        if (typeof window !== 'undefined') {
+          setTimeout(function() {
+            const swiperEl = document.querySelector('swiper-container');
+            
+            if (swiperEl) {
+              const swiperParams = {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                  delay: 3000,
+                  disableOnInteraction: false,
+                },
+                pagination: {
+                  clickable: true,
+                },
+                breakpoints: {
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                },
+              };
+              
+              Object.assign(swiperEl, swiperParams);
+              swiperEl.initialize();
+            }
+            
+            // Initialize Activity Swiper
+            const activitySwiperEl = document.querySelector('#activity-swiper');
+            
+            if (activitySwiperEl) {
+              const activitySwiperParams = {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: false,
+                speed: 600,
+                autoplay: false,
+                pagination: {
+                  clickable: true,
+                  dynamicBullets: true,
+                },
+                navigation: {
+                  enabled: false,
+                },
+                allowTouchMove: true,
+                simulateTouch: true,
+                grabCursor: true,
+                effect: 'slide',
+                preventInteractionOnTransition: false,
+              };
+              
+              Object.assign(activitySwiperEl, activitySwiperParams);
+              activitySwiperEl.initialize();
+              
+              // Wait for swiper to be fully initialized
+              setTimeout(() => {
+                // Connect custom buttons
+                const prevBtn = document.getElementById('activity-prev');
+                const nextBtn = document.getElementById('activity-next');
+                
+                if (prevBtn && nextBtn && activitySwiperEl.swiper) {
+                  // Remove any existing listeners
+                  const newPrevBtn = prevBtn.cloneNode(true);
+                  const newNextBtn = nextBtn.cloneNode(true);
+                  prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+                  nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+                  
+                  // Add click listeners
+                  newPrevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (activitySwiperEl.swiper) {
+                      activitySwiperEl.swiper.slidePrev();
+                    }
+                  });
+                  
+                  newNextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (activitySwiperEl.swiper) {
+                      activitySwiperEl.swiper.slideNext();
+                    }
+                  });
+                  
+                  // Update button states based on slide position
+                  const updateButtonStates = () => {
+                    if (activitySwiperEl.swiper) {
+                      const swiper = activitySwiperEl.swiper;
+                      
+                      // Disable prev button on first slide
+                      if (swiper.isBeginning) {
+                        newPrevBtn.style.opacity = '0.5';
+                        newPrevBtn.style.cursor = 'not-allowed';
+                      } else {
+                        newPrevBtn.style.opacity = '1';
+                        newPrevBtn.style.cursor = 'pointer';
+                      }
+                      
+                      // Disable next button on last slide
+                      if (swiper.isEnd) {
+                        newNextBtn.style.opacity = '0.5';
+                        newNextBtn.style.cursor = 'not-allowed';
+                      } else {
+                        newNextBtn.style.opacity = '1';
+                        newNextBtn.style.cursor = 'pointer';
+                      }
+                    }
+                  };
+                  
+                  // Update on slide change
+                  activitySwiperEl.swiper.on('slideChange', updateButtonStates);
+                  activitySwiperEl.swiper.on('init', updateButtonStates);
+                  
+                  // Initial update
+                  updateButtonStates();
+                }
+              }, 200);
+            }
+          }, 100);
+        }
+      </script>
+
+      <!-- Logo Button Scroll to Top -->
+      <script>
+        (function() {
+          // Add click handler to logo button for scroll to top
+          const logoButton = document.querySelector('.logo');
+          if (logoButton) {
+            logoButton.addEventListener('click', function() {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+            });
+            
+            // Make sure the button is clickable
+            logoButton.style.cursor = 'pointer';
+            logoButton.parentElement.style.cursor = 'pointer';
+          }
+        })();
+      </script>
+    </div>
+  </body>
+</html>

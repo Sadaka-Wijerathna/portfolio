@@ -1,0 +1,35 @@
+{
+    "name": "Malith Rukshan - Software Developer",
+    "short_name": "Malith Rukshan",
+    "description": "Malith Rukshan - Full-stack Software Developer & AI/ML Engineer. Founder of Single Developers </>",
+    "lang": "en-US",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#ffffff",
+    "theme_color": "#3b82f6",
+    "icons": [
+      {
+        "src": "/images/apple-touch-icon.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/favicon-64x64.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      }
+    ]
+  }
+  

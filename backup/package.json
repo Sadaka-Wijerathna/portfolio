@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-chatgpt",
+  "version": "1.0.0",
+  "description": "Portfolio with ChatGPT Integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["portfolio", "chatgpt", "openrouter"],
+  "author": "Sadaka Wijerathna",
+  "license": "MIT"
+}
